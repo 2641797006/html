@@ -5,7 +5,7 @@ body{
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-div	{ width: 600px; margin: 1em auto; padding: 50px; background-color: #fff; border-radius: 1em; }
+div	{ width: 600px; margin: 1em auto; padding: 20px; background-color: #fff; border-radius: 1em; }
 
 a:link		{ color: #00beee; text-decoration: none; }
 a:visited	{ color: #003399; text-decoration: none; }
