@@ -1,2 +1,2 @@
 .example	{ width: 600px; margin: 1em auto; padding: 20px; background-color: #fff; border-radius: 1em; }
-.l_blue	{ width: 900px; margin: 0em auto; padding: 10px; background-color: #eee; border-radius: 6em; }
+.l_blue	{ width: auto; margin: 0em auto; padding: 10px; background-color: #eee; border-radius: 6em; }
