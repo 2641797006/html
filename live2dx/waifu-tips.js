@@ -31,14 +31,14 @@ $(document).on('copy', function (){
 });
 
 $('#hitokoto').mouseover(function (){
-    var text = '这句一言出处是 <span style="color:#0099cc;">『{source}』</span>，是 <span style="color:#0099cc;">FGHRSH</span> 在 {date} 收藏的！';
+    var text = '这句话是我跟主人学的哦~~';
     var hitokoto = JSON.parse($(this)[0].dataset.raw);
     text = text.render({source: hitokoto.source, author: hitokoto.author, date: hitokoto.date});
     showMessage(text, 3000);
 });
 
 $('.waifu-tool .fui-home').click(function (){
-    window.location = 'http://www.cnblogs.com/ECJTUACM-873284962/';
+    window.location = 'https://2641797006.github.io/html/';
     
 });
 
@@ -177,7 +177,7 @@ function elseActed(){
 
 function showHitokoto(){
     $.getJSON('//api.fghrsh.net/hitokoto/rand/?encode=jsc&uid=3335',function(result){
-        var text = '这句一言出处是 <span style="color:#0099cc;">『{source}』</span>，是 <span style="color:#0099cc;">FGHRSH</span> 在 {date} 收藏的！';
+        var text = '这句是我在主人那学来的！';
         text = text.render({source: result.source, date: result.date});
         showMessage(result.hitokoto, 5000);
         window.setTimeout(function() {showMessage(text, 3000);}, 5000);
@@ -349,7 +349,7 @@ var waifuJson = {
         },
         {
             "selector": ".waifu-tool .fui-eye",
-            "text": ["深夜要爱护眼睛呢，切花夜间模式吧~再点击下就切换"]
+            "text": ["深夜要爱护眼睛呢，切花夜间模式吧~别指望我帮你切换哦"]
         },
         {
             "selector": ".waifu-tool .fui-cross",
