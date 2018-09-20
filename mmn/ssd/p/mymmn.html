@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>梦梦奈</title>
+
+</head>
+<body>
+<a name="top"></a>
+<div id="page_begin_html"></div><script>load_page_begin_html();</script>
+
+
+<link rel="stylesheet" type="text/css" href="https://files.cnblogs.com/files/ECJTUACM-873284962/flat-ui.min.css"/>
+<script type="text/javascript" src="https://files.cnblogs.com/files/ECJTUACM-873284962/background-change.js"></script>
+<script src="https://files.cnblogs.com/files/ECJTUACM-873284962/prettify.js"></script>
+<script type="text/javascript" language="javascript">
+　　//Setting ico for cnblogs
+　　var linkObject = document.createElement('link');
+　　linkObject.rel = "shortcut icon";
+　　linkObject.href = "https://files.cnblogs.com/files/ECJTUACM-873284962/favicon.ico";
+　　document.getElementsByTagName("head")[0].appendChild(linkObject);
+</script>
+<script type="text/javascript">
+(function() {
+     $("pre").addClass("prettyprint");
+     prettyPrint();
+})();
+</script>
+<script type="text/javascript" src="https://files.cnblogs.com/files/ECJTUACM-873284962/Comments.js"></script>
+<script language="javascript" type="text/javascript">
+// 生成目录索引列表
+function GenerateContentList()
+{
+var mainContent = $('#cnblogs_post_body');
+var h2_list = $('#cnblogs_post_body h2');//如果你的章节标题不是h2,只需要将这里的h2换掉即可
+if(mainContent.length < 1)
+    return;
+
+if(h2_list.length>0)
+{
+    var content = '<a name="_labelTop"></a>';
+    content += '<div id="navCategory">';
+    content += '<p style="font-size:18px"><b>目录</b></p>';
+    content += '<ul>';
+    for(var i=0; i<h2_list.length; i++)
+    {
+        var go_to_top = '<div style="text-align: right"><a href="#_labelTop">Return Top</a><a name="_label' + i + '"></a></div>';
+        $(h2_list[i]).before(go_to_top);
+        var h3_list = $(h2_list[i]).nextAll("h3");
+        var li3_content = '';
+        for(var j=0; j<h3_list.length; j++)
+        {
+            var tmp = $(h3_list[j]).prevAll('h2').first();
+            if(!tmp.is(h2_list[i]))
+                break;
+            var li3_anchor = '<a name="_label' + i + '_' + j + '"></a>';
+            $(h3_list[j]).before(li3_anchor);
+            li3_content += '<li><a href="6679839.html#_label' + i + '_' + j + '">' + $(h3_list[j]).text() + '</a></li>';
+        }
+        var li2_content = '';
+        if(li3_content.length > 0)
+            li2_content = '<li><a href="6679839.html#_label' + i + '">' + $(h2_list[i]).text() + '</a><ul>' + li3_content + '</ul></li>';
+        else
+            li2_content = '<li><a href="6679839.html#_label' + i + '">' + $(h2_list[i]).text() + '</a></li>';
+        content += li2_content;
+    }
+    content += '</ul>';
+    content += '</div><p>&nbsp;</p>';
+    if($('#cnblogs_post_body').length != 0 )
+    {
+        $($('#cnblogs_post_body')[0]).prepend(content);
+    }
+}   
+$(mainContent[0]).prepend(qqinfo);
+}
+GenerateContentList();
+</script>
+<style>
+#back-top {
+     position: fixed;
+     bottom: 10px;
+     right: 5px;
+     z-index: 99;
+}
+#back-top span {
+     width: 150px;
+     height: 174px;
+     display: block;
+     background:url(https://i.loli.net/2018/04/20/5ad9ad7857b27.png)no-repeat center center;
+}
+#back-top a{outline:none}
+</style>
+<script type="text/javascript">
+$(function() {
+    // hide #back-top first
+    $("#back-top").hide();
+    // fade in #back-top
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+            $('#back-top').fadeIn();
+        } else {
+            $('#back-top').fadeOut();
+        }
+    });
+    // scroll body to 0px on click
+    $('#back-top a').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+});
+</script>
+<p id="back-top" style="display:none"><a href="6679839.html#top"><span></span></a></p>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        
+        <title>Live2D</title>
+        
+        <link rel="stylesheet" type="text/css" href="https://blog-static.cnblogs.com/files/ECJTUACM-873284962/waifu.css"/>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <link rel="stylesheet" type="text/css" href="https://blog-static.cnblogs.com/files/ECJTUACM-873284962/waifu.css">
+        <div class="waifu" id="waifu">
+            <div class="waifu-tips" style="opacity: 1;"></div>
+            <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+            <div class="waifu-tool">
+               <span class="fui-home"></span>
+               <span class="fui-chat"></span>
+              <span class="fui-heart"></span>
+              <span class="fui-user"></span>
+              <span class="fui-photo"></span>   
+             <span class="fui-eye"></span>
+             <span class="fui-cross"></span>
+
+            </div>
+        </div>
+        <script src="https://files.cnblogs.com/files/ECJTUACM-873284962/live2d.js"></script>
+        <script src="https://files.cnblogs.com/files/ECJTUACM-873284962/waifu-tips.js"></script>
+        <script type="text/javascript">initModel()</script>
+
+    <canvas id="c_n9" width="1920" height="990" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
+    <script src="https://files.cnblogs.com/files/ECJTUACM-873284962/back-cartoon.js"></script>
+
+    <script src="https://files.cnblogs.com/files/ECJTUACM-873284962/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://files.cnblogs.com/files/ECJTUACM-873284962/marvin.nav.css">
+    <script type="text/javascript" src="https://files.cnblogs.com/files/ECJTUACM-873284962/marvic.nav.js"></script>
+    </body>
+    </html>
+<!--PageEndHtml Block End-->
+</body>
+</html>
