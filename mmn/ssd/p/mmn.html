@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>C语言求最小公倍数和最大公约数三种算法(经典) - Angel_Kitty - 博客园</title>
+<meta property="og:description" content="把以前写的一些经验总结汇个总，方便给未来的学弟学妹们做个参考！ 永远爱你们的：Sakura 最小公倍数：数论中的一种概念，两个整数公有的倍数成为他们的公倍数，其中一个最小的公倍数是他们的最小公倍数，同" />
+<link type="text/css" rel="stylesheet" href="../../bundles/blog-common.css?v=giTNza-Of-PEt5UsELhFQAR7G6-bfaSa4oolcq7i9-o1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="../../XS_skins/SimpleMemory/bundle-SimpleMemory.css?v=EanP3quXYv9G0oFCmz4BNBHvmK7M_Si1iD1EpUHL_441"/>
+<link type="text/css" rel="stylesheet" href="../../blog/customcss/329976.css?v=PdHhHD+h0ih6jIjAZ4g71w7ki7c="/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="../../XS_skins/SimpleMemory/bundle-SimpleMemory-mobile.css?v=XGOE8_i3XCsAIQHcgl5c_8VAMMKRkj0W3Eckyc8qbso1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/ECJTUACM-873284962/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/ECJTUACM-873284962/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/ECJTUACM-873284962/wlwmanifest.xml"/>
+<script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'ECJTUACM-873284962', cb_enable_mathjax=true;var isLogined=false;</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'blogpost-body', processEscapes: true },
+        TeX: { 
+            equationNumbers: { autoNumber: ['AMS'], useLabelIds: true }, extensions: ['extpfeil.js'] },
+            'HTML-CSS': { linebreaks: { automatic: true } },
+            SVG: { linebreaks: { automatic: true } }
+        });
+    </script><script src="https://mathjax.cnblogs.com/2_7_2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../../bundles/blog-common.js?v=yRkjgN2sBQkB4hX-wirHxPomeBT9sB5dawr6ob7KIvg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<div id="page_begin_html"></div><script>load_page_begin_html();</script>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/ECJTUACM-873284962/"><img id="blogLogo" src="../../Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/ECJTUACM-873284962/">Angel_Kitty</a></h1>
+<h2>我很弱，但是我要坚强！绝不让那些为我付出过的人失望！</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/ECJTUACM-873284962/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/Angel_Kitty">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/ECJTUACM-873284962/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/ECJTUACM-873284962/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 821&nbsp; </span>
+<span id="stats_article_count">文章 - 5&nbsp; </span>
+<span id="stats-comment_count">评论 - 1262</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="6679839.html">C语言求最小公倍数和最大公约数三种算法(经典)</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-family: System; font-size: 12px;">把以前写的一些经验总结汇个总，方便给未来的学弟学妹们做个参考！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p><span style="font-family: System; font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --------------------------永远爱你们的：Sakura</span></p>
+<p><span style="font-family: System; font-size: 12px;">最小公倍数：数论中的一种概念，两个整数公有的倍数成为他们的公倍数，其中一个最小的公倍数是他们的最小公倍数，同样地，若干个整数公有的倍数中最小的正整数称为它们的最小公倍数，维基百科：定义<a href="http://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B8">点击打开链接</a></span></p>
+<p><span style="font-family: System; font-size: 12px;"><span style="color: #3333cc;">求最小公倍数<a class="replace_word" style="color: #df3434; font-weight: bold;" title="算法与数据结构知识库" href="http://lib.csdn.net/base/datastructure" target="_blank">算法</a><span style="color: black;">：</span></span></span></p>
+<p><span style="font-family: System; font-size: 12px;">最小公倍数<span style="color: black; font-family: System; font-size: 12px;">=<span style="color: black; font-family: System; font-size: 12px;">两整数的乘积<span style="color: black; font-family: System; font-size: 12px;">&divide;<span style="color: #3333cc; font-family: System; font-size: 12px;">最大公约数</span></span></span></span></span></p>
+<p><span style="color: #3333cc; font-family: System; font-size: 12px;">求最大公约数算法<span style="color: black; font-family: System; font-size: 12px;">：</span></span></p>
+<p><span style="color: #3366ff; font-family: System; font-size: 12px;">(1)<span style="color: black; font-family: System; font-size: 12px;"><span style="color: #3333cc; font-family: System; font-size: 12px;">辗转相除法</span></span></span></p>
+<p><span style="font-family: System; font-size: 12px;">有两整数<span style="color: black; font-family: System; font-size: 12px;">a<span style="color: black; font-family: System; font-size: 12px;">和<span style="color: black; font-family: System; font-size: 12px;">b<span style="color: black; font-family: System; font-size: 12px;">：</span></span></span></span></span></p>
+<p><span style="font-family: System; font-size: 12px;">① <span style="color: black; font-family: System; font-size: 12px;">a%b<span style="color: black; font-family: System; font-size: 12px;">得余数<span style="font-family: System; font-size: 12px;">c</span></span></span></span></p>
+<p><span style="font-family: System; font-size: 12px;">② <span style="color: black; font-family: System; font-size: 12px;">若<span style="color: black; font-family: System; font-size: 12px;">c=0<span style="color: black; font-family: System; font-size: 12px;">，则<span style="color: black; font-family: System; font-size: 12px;">b<span style="color: black; font-family: System; font-size: 12px;">即为两数的最大公约数</span></span></span></span></span></span></p>
+<p><span style="font-family: System; font-size: 12px;">③ 若<span style="color: black; font-family: System; font-size: 12px;">c&ne;0<span style="color: black; font-family: System; font-size: 12px;">，则<span style="color: black; font-family: System; font-size: 12px;">a=b<span style="color: black; font-family: System; font-size: 12px;">，<span style="color: black; font-family: System; font-size: 12px;">b=c<span style="color: black; font-family: System; font-size: 12px;">，再回去执行①</span></span></span></span></span></span></span></p>
+<p><span style="font-family: System; font-size: 12px;">例如求<span style="color: black; font-family: System; font-size: 12px;">27<span style="color: black; font-family: System; font-size: 12px;">和<span style="color: black; font-family: System; font-size: 12px;">15<span style="color: black; font-family: System; font-size: 12px;">的最大公约数过程为：</span></span></span></span></span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">27&divide;15 <span style="color: black; font-family: System; font-size: 12px;">余<span style="color: black; font-family: System; font-size: 12px;">12<span style="font-family: System; font-size: 12px;">15&divide;12<span style="color: black; font-family: System; font-size: 12px;">余<span style="color: black; font-family: System; font-size: 12px;">3<span style="font-family: System; font-size: 12px;">12&divide;3<span style="color: black; font-family: System; font-size: 12px;">余<span style="color: black; font-family: System; font-size: 12px;">0<span style="color: black; font-family: System; font-size: 12px;">因此，<span style="color: black; font-family: System; font-size: 12px;">3<span style="color: black; font-family: System; font-size: 12px;">即为最大公约数</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> #include&lt;stdio.h&gt;
+<span style="color: #008080;"> 2</span> <span style="color: #0000ff;">int</span> main()   <span style="color: #008000;">/*</span><span style="color: #008000;">  辗转相除法求最大公约数 </span><span style="color: #008000;">*/</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #000000;">{ 
+</span><span style="color: #008080;"> 4</span>    <span style="color: #0000ff;">int</span><span style="color: #000000;"> m, n, a, b, t, c;
+</span><span style="color: #008080;"> 5</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">Input two integer numbers:\n</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+</span><span style="color: #008080;"> 6</span>    scanf(<span style="color: #800000;">"</span><span style="color: #800000;">%d%d</span><span style="color: #800000;">"</span>, &amp;a, &amp;<span style="color: #000000;">b);
+</span><span style="color: #008080;"> 7</span>    m=a;   n=<span style="color: #000000;">b;
+</span><span style="color: #008080;"> 8</span>    <span style="color: #0000ff;">while</span>(b!=<span style="color: #800080;">0</span>)  <span style="color: #008000;">/*</span><span style="color: #008000;"> 余数不为0，继续相除，直到余数为0 </span><span style="color: #008000;">*/</span> 
+<span style="color: #008080;"> 9</span>    { c=a%b; a=b;  b=<span style="color: #000000;">c;}
+</span><span style="color: #008080;">10</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">The largest common divisor:%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">, a);
+</span><span style="color: #008080;">11</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">The least common multiple:%d\n</span><span style="color: #800000;">"</span>, m*n/<span style="color: #000000;">a);
+</span><span style="color: #008080;">12</span> }</pre>
+</div>
+<p><span style="color: black; font-family: System; font-size: 12px;">提供一种简写的方式：</span></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">int</span> gcd(<span style="color: #0000ff;">int</span> a,<span style="color: #0000ff;">int</span><span style="color: #000000;"> b)
+</span><span style="color: #008080;">2</span> <span style="color: #000000;">{
+</span><span style="color: #008080;">3</span>    <span style="color: #0000ff;">return</span> b==<span style="color: #800080;">0</span>?a:gcd(b,a%<span style="color: #000000;">b);
+</span><span style="color: #008080;">4</span> }</pre>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="color: black; font-family: System; font-size: 12px;">⑵ 相减法</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">有两整数a和b：</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">① 若a&gt;b，则a=a-b</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">② 若a&lt;b，则b=b-a</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">③ 若a=b，则a（或b）即为两数的最大公约数</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">④ 若a&ne;b，则再回去执行①</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">例如求27和15的最大公约数过程为：</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">27－15＝12( 15&gt;12 ) 15－12＝3( 12&gt;3 )</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">12－3＝9( 9&gt;3 ) 9－3＝6( 6&gt;3 )</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">6－3＝3( 3==3 )</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">因此，3即为最大公约数</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> #include&lt;stdio.h&gt;
+<span style="color: #008080;"> 2</span> <span style="color: #0000ff;">int</span> main ( )  <span style="color: #008000;">/*</span><span style="color: #008000;"> 相减法求最大公约数 </span><span style="color: #008000;">*/</span>
+<span style="color: #008080;"> 3</span> <span style="color: #000000;">{  
+</span><span style="color: #008080;"> 4</span>    <span style="color: #0000ff;">int</span><span style="color: #000000;"> m, n, a, b, c;
+</span><span style="color: #008080;"> 5</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">Input two integer numbers:\n</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+</span><span style="color: #008080;"> 6</span>    scanf (<span style="color: #800000;">"</span><span style="color: #800000;">%d,%d</span><span style="color: #800000;">"</span>, &amp;a, &amp;b);m=a; n=<span style="color: #000000;">b; 
+</span><span style="color: #008080;"> 7</span>      <span style="color: #008000;">/*</span><span style="color: #008000;"> a, b不相等，大数减小数，直到相等为止。</span><span style="color: #008000;">*/</span> 
+<span style="color: #008080;"> 8</span>    <span style="color: #0000ff;">while</span> ( a!=<span style="color: #000000;">b) 
+</span><span style="color: #008080;"> 9</span>          <span style="color: #0000ff;">if</span> (a&gt;b)  a=a-<span style="color: #000000;">b;     
+</span><span style="color: #008080;">10</span>          <span style="color: #0000ff;">else</span>  b=b-<span style="color: #000000;">a;
+</span><span style="color: #008080;">11</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">The largest common divisor:%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">, a);
+</span><span style="color: #008080;">12</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">The least common multiple:%d\n</span><span style="color: #800000;">"</span>, m*n/<span style="color: #000000;">a);
+</span><span style="color: #008080;">13</span> }</pre>
+</div>
+<p><span style="color: black; font-family: System; font-size: 12px;">⑶穷举法</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">有两整数a和b：</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">① i=1</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">② 若a，b能同时被i整除，则t＝i</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">③ i++</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">④ 若 i &lt;= a(或b)，则再回去执行②</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">⑤ 若 i &gt; a(或b)，则t即为最大公约数，结束</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">改进：</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">① i= a(或b)</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">② 若a，b能同时被i整除，则i即为最大公约数，</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">结束</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">③ i--，再回去执行②</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">有两整数a和b：</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">① i=1</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">② 若a，b能同时被i整除，则t＝i</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">③ i++</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">④ 若 i &lt;= a(或b)，则再回去执行②</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">⑤ 若 i &gt; a(或b)，则t即为最大公约数，结束</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">改进：</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">① i= a(或b)</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">② 若a，b能同时被i整除，则i即为最大公约数，</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">结束</span></p>
+<p><span style="color: black; font-family: System; font-size: 12px;">③ i--，再回去执行②</span></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> #include&lt;stdio.h&gt;
+<span style="color: #008080;"> 2</span> <span style="color: #0000ff;">int</span> main ()  <span style="color: #008000;">/*</span><span style="color: #008000;"> 穷举法求最大公约数 </span><span style="color: #008000;">*/</span>
+<span style="color: #008080;"> 3</span> <span style="color: #000000;">{  
+</span><span style="color: #008080;"> 4</span>    <span style="color: #0000ff;">int</span><span style="color: #000000;">  m, n, a, b, i, t;
+</span><span style="color: #008080;"> 5</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">Input two integer numbers:\n</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+</span><span style="color: #008080;"> 6</span>    scanf (<span style="color: #800000;">"</span><span style="color: #800000;">%d,%d</span><span style="color: #800000;">"</span>, &amp;a, &amp;b);m=a;  n=<span style="color: #000000;">b; 
+</span><span style="color: #008080;"> 7</span>    <span style="color: #0000ff;">for</span> (i=<span style="color: #800080;">1</span>; i&lt;= a; i++<span style="color: #000000;">)  
+</span><span style="color: #008080;"> 8</span>        <span style="color: #0000ff;">if</span> ( a%i == <span style="color: #800080;">0</span> &amp;&amp; b%i ==<span style="color: #800080;">0</span> )    t=<span style="color: #000000;">i;
+</span><span style="color: #008080;"> 9</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">The largest common divisor:%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">, t);
+</span><span style="color: #008080;">10</span>    printf(<span style="color: #800000;">"</span><span style="color: #800000;">The least common multiple:%d\n</span><span style="color: #800000;">"</span>, m*n/<span style="color: #000000;">t);
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">} 
+</span><span style="color: #008080;">12</span> <span style="color: #008000;">/*</span><span style="color: #008000;">  改进后的
+</span><span style="color: #008080;">13</span> <span style="color: #008000;">   for (t= a; t&gt;0; t-- )    
+</span><span style="color: #008080;">14</span> <span style="color: #008000;">       if ( a%t == 0 &amp;&amp; b%t ==0 )    break; 
+</span><span style="color: #008080;">15</span> <span style="color: #008000;">*/</span></pre>
+</div>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #008000;">//</span><span style="color: #008000;">穷举法求最小公倍数</span>
+<span style="color: #008080;"> 2</span>      <span style="color: #0000ff;">for</span> (i= a; ; i++<span style="color: #000000;"> )
+</span><span style="color: #008080;"> 3</span>          <span style="color: #0000ff;">if</span> ( i % a == <span style="color: #800080;">0</span> &amp;&amp; i % b ==<span style="color: #800080;">0</span> )     <span style="color: #0000ff;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 4</span>      printf(<span style="color: #800000;">"</span><span style="color: #800000;">The least common multiple:%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">, i )
+</span><span style="color: #008080;"> 5</span>  
+<span style="color: #008080;"> 6</span> <span style="color: #008000;">//</span><span style="color: #008000;">多个数的最大公约数和最小公倍数</span>
+<span style="color: #008080;"> 7</span>      <span style="color: #0000ff;">for</span> (i= a; i&gt;<span style="color: #800080;">0</span>; i--<span style="color: #000000;"> )
+</span><span style="color: #008080;"> 8</span>          <span style="color: #0000ff;">if</span> (a%i==<span style="color: #800080;">0</span>&amp;&amp;b%i==<span style="color: #800080;">0</span>&amp;&amp;c%i==<span style="color: #800080;">0</span>)     <span style="color: #0000ff;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 9</span>      printf(<span style="color: #800000;">"</span><span style="color: #800000;">The largest common divisor:%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">, i);
+</span><span style="color: #008080;">10</span>      <span style="color: #0000ff;">for</span> (i= a; ; i++<span style="color: #000000;"> )
+</span><span style="color: #008080;">11</span>          <span style="color: #0000ff;">if</span> (i%a==<span style="color: #800080;">0</span>&amp;&amp;i%b==<span style="color: #800080;">0</span>&amp;&amp;i% c==<span style="color: #800080;">0</span>)    <span style="color: #0000ff;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;">12</span>      printf(<span style="color: #800000;">"</span><span style="color: #800000;">The least common multiple:%d\n</span><span style="color: #800000;">"</span>, i )</pre>
+</div>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2017-04-07 20:19</span> <a href='https://www.cnblogs.com/ECJTUACM-873284962/'>Angel_Kitty</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6679839" rel="nofollow">编辑</a> <a href="6679839.html#" onclick="AddToWz(6679839);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=329976,cb_entryId=6679839,cb_blogApp=currentBlogApp,cb_blogUserGuid='e1cc9c32-fce8-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2017/4/7 20:19:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='6679839.html#' onclick='return RefreshPage();'>刷新页面</a><a href='6679839.html#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2018 Angel_Kitty
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+<!--PageEndHtml Block Begin-->
+<link rel="stylesheet" type="text/css" href="https://files.cnblogs.com/files/ECJTUACM-873284962/flat-ui.min.css"/>
+<script type="text/javascript" src="https://files.cnblogs.com/files/ECJTUACM-873284962/background-change.js"></script>
+<script src="https://files.cnblogs.com/files/ECJTUACM-873284962/prettify.js"></script>
+<script type="text/javascript" language="javascript">
+　　//Setting ico for cnblogs
+　　var linkObject = document.createElement('link');
+　　linkObject.rel = "shortcut icon";
+　　linkObject.href = "https://files.cnblogs.com/files/ECJTUACM-873284962/favicon.ico";
+　　document.getElementsByTagName("head")[0].appendChild(linkObject);
+</script>
+<script type="text/javascript">
+(function() {
+     $("pre").addClass("prettyprint");
+     prettyPrint();
+})();
+</script>
+<script type="text/javascript" src="https://files.cnblogs.com/files/ECJTUACM-873284962/Comments.js"></script>
+<script language="javascript" type="text/javascript">
+// 生成目录索引列表
+function GenerateContentList()
+{
+var mainContent = $('#cnblogs_post_body');
+var h2_list = $('#cnblogs_post_body h2');//如果你的章节标题不是h2,只需要将这里的h2换掉即可
+if(mainContent.length < 1)
+    return;
+
+if(h2_list.length>0)
+{
+    var content = '<a name="_labelTop"></a>';
+    content += '<div id="navCategory">';
+    content += '<p style="font-size:18px"><b>目录</b></p>';
+    content += '<ul>';
+    for(var i=0; i<h2_list.length; i++)
+    {
+        var go_to_top = '<div style="text-align: right"><a href="#_labelTop">Return Top</a><a name="_label' + i + '"></a></div>';
+        $(h2_list[i]).before(go_to_top);
+        var h3_list = $(h2_list[i]).nextAll("h3");
+        var li3_content = '';
+        for(var j=0; j<h3_list.length; j++)
+        {
+            var tmp = $(h3_list[j]).prevAll('h2').first();
+            if(!tmp.is(h2_list[i]))
+                break;
+            var li3_anchor = '<a name="_label' + i + '_' + j + '"></a>';
+            $(h3_list[j]).before(li3_anchor);
+            li3_content += '<li><a href="6679839.html#_label' + i + '_' + j + '">' + $(h3_list[j]).text() + '</a></li>';
+        }
+        var li2_content = '';
+        if(li3_content.length > 0)
+            li2_content = '<li><a href="6679839.html#_label' + i + '">' + $(h2_list[i]).text() + '</a><ul>' + li3_content + '</ul></li>';
+        else
+            li2_content = '<li><a href="6679839.html#_label' + i + '">' + $(h2_list[i]).text() + '</a></li>';
+        content += li2_content;
+    }
+    content += '</ul>';
+    content += '</div><p>&nbsp;</p>';
+    if($('#cnblogs_post_body').length != 0 )
+    {
+        $($('#cnblogs_post_body')[0]).prepend(content);
+    }
+}   
+$(mainContent[0]).prepend(qqinfo);
+}
+GenerateContentList();
+</script>
+<style>
+#back-top {
+     position: fixed;
+     bottom: 10px;
+     right: 5px;
+     z-index: 99;
+}
+#back-top span {
+     width: 150px;
+     height: 174px;
+     display: block;
+     background:url(https://i.loli.net/2018/04/20/5ad9ad7857b27.png)no-repeat center center;
+}
+#back-top a{outline:none}
+</style>
+<script type="text/javascript">
+$(function() {
+    // hide #back-top first
+    $("#back-top").hide();
+    // fade in #back-top
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+            $('#back-top').fadeIn();
+        } else {
+            $('#back-top').fadeOut();
+        }
+    });
+    // scroll body to 0px on click
+    $('#back-top a').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+});
+</script>
+<p id="back-top" style="display:none"><a href="6679839.html#top"><span></span></a></p>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        
+        <title>Live2D</title>
+        
+        <link rel="stylesheet" type="text/css" href="https://blog-static.cnblogs.com/files/ECJTUACM-873284962/waifu.css"/>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <link rel="stylesheet" type="text/css" href="https://blog-static.cnblogs.com/files/ECJTUACM-873284962/waifu.css">
+        <div class="waifu" id="waifu">
+            <div class="waifu-tips" style="opacity: 1;"></div>
+            <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+            <div class="waifu-tool">
+               <span class="fui-home"></span>
+               <span class="fui-chat"></span>
+              <span class="fui-heart"></span>
+              <span class="fui-user"></span>
+              <span class="fui-photo"></span>   
+             <span class="fui-eye"></span>
+             <span class="fui-cross"></span>
+
+            </div>
+        </div>
+        <script src="https://files.cnblogs.com/files/ECJTUACM-873284962/live2d.js"></script>
+        <script src="https://files.cnblogs.com/files/ECJTUACM-873284962/waifu-tips.js"></script>
+        <script type="text/javascript">initModel()</script>
+
+    <canvas id="c_n9" width="1920" height="990" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
+    <script src="https://files.cnblogs.com/files/ECJTUACM-873284962/back-cartoon.js"></script>
+
+    <script src="https://files.cnblogs.com/files/ECJTUACM-873284962/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://files.cnblogs.com/files/ECJTUACM-873284962/marvin.nav.css">
+    <script type="text/javascript" src="https://files.cnblogs.com/files/ECJTUACM-873284962/marvic.nav.js"></script>
+    </body>
+    </html>
+<!--PageEndHtml Block End-->
+</body>
+</html>
