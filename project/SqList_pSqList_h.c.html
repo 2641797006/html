@@ -515,143 +515,163 @@
       </tr>
       <tr>
         <td id="L110" class="blob-num js-line-number" data-line-number="110"></td>
-        <td id="LC110" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">FormatList</span>(SqList* L, ElemType (*f)(ElemType));</td>
+        <td id="LC110" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">ListTraverse</span>(SqList* L, <span class="pl-k">int</span> (*visit)(ElemType*));</td>
       </tr>
       <tr>
         <td id="L111" class="blob-num js-line-number" data-line-number="111"></td>
-        <td id="LC111" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	此函数根据 f函数 来格式化顺序表所有元素</span></td>
+        <td id="LC111" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	此函数 依次对L的每个数据元素调用函数visit函数, </span></td>
       </tr>
       <tr>
         <td id="L112" class="blob-num js-line-number" data-line-number="112"></td>
-        <td id="LC112" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	参数:</span></td>
+        <td id="LC112" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	一但visit返回非0值, 则此函数立即返回visit返回的非零值</span></td>
       </tr>
       <tr>
         <td id="L113" class="blob-num js-line-number" data-line-number="113"></td>
-        <td id="LC113" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		f: 指定格式化规则的函数的地址</span></td>
+        <td id="LC113" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	参数:</span></td>
       </tr>
       <tr>
         <td id="L114" class="blob-num js-line-number" data-line-number="114"></td>
-        <td id="LC114" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	例:</span></td>
+        <td id="LC114" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		visit: 一个 int (*visit)(ElemType*) 型函数</span></td>
       </tr>
       <tr>
         <td id="L115" class="blob-num js-line-number" data-line-number="115"></td>
-        <td id="LC115" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		ElemType f(ElemType e)</span></td>
+        <td id="LC115" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	例:</span></td>
       </tr>
       <tr>
         <td id="L116" class="blob-num js-line-number" data-line-number="116"></td>
-        <td id="LC116" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		{</span></td>
+        <td id="LC116" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		int visit(ElemType* e)</span></td>
       </tr>
       <tr>
         <td id="L117" class="blob-num js-line-number" data-line-number="117"></td>
-        <td id="LC117" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			return e*2+1;</span></td>
+        <td id="LC117" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		{</span></td>
       </tr>
       <tr>
         <td id="L118" class="blob-num js-line-number" data-line-number="118"></td>
-        <td id="LC118" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		}</span></td>
+        <td id="LC118" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			*e=*e*2+1;</span></td>
       </tr>
       <tr>
         <td id="L119" class="blob-num js-line-number" data-line-number="119"></td>
-        <td id="LC119" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		FormatList(&amp;L, &amp;f)会将顺序表中所有元素乘以2再加1</span></td>
+        <td id="LC119" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			if(*e&lt;0)</span></td>
       </tr>
       <tr>
         <td id="L120" class="blob-num js-line-number" data-line-number="120"></td>
-        <td id="LC120" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span></td>
+        <td id="LC120" class="blob-code blob-code-inner js-file-line"><span class="pl-c">				return -1;</span></td>
       </tr>
       <tr>
         <td id="L121" class="blob-num js-line-number" data-line-number="121"></td>
-        <td id="LC121" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">fprintList</span>(SqList* L, <span class="pl-k">char</span>* filename, <span class="pl-k">char</span>* openmode);</td>
+        <td id="LC121" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			return 0;</span></td>
       </tr>
       <tr>
         <td id="L122" class="blob-num js-line-number" data-line-number="122"></td>
-        <td id="LC122" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	将顺序表输出到文件中, 数据之间以空格间隔, 不输出换行符</span></td>
+        <td id="LC122" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		}</span></td>
       </tr>
       <tr>
         <td id="L123" class="blob-num js-line-number" data-line-number="123"></td>
-        <td id="LC123" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	参数:</span></td>
+        <td id="LC123" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		ListTraverse(&amp;L, &amp;visit)会依次将顺序表中的元素乘以2再加1</span></td>
       </tr>
       <tr>
         <td id="L124" class="blob-num js-line-number" data-line-number="124"></td>
-        <td id="LC124" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		filename: 指向字符串的指针, 指定输出文件的路径与文件名</span></td>
+        <td id="LC124" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		如果遇到元素乘以2再加1后小于0, ListTraverse立即返回-1</span></td>
       </tr>
       <tr>
         <td id="L125" class="blob-num js-line-number" data-line-number="125"></td>
-        <td id="LC125" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		openmode: 指向字符串的指针, 指定打开文件的方式, 可以为 &quot;w&quot; 或 &quot;a&quot;</span></td>
+        <td id="LC125" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span></td>
       </tr>
       <tr>
         <td id="L126" class="blob-num js-line-number" data-line-number="126"></td>
-        <td id="LC126" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			&quot;w&quot;: 覆盖原文件  &quot;a&quot;: 追加到文件末尾</span></td>
+        <td id="LC126" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">fprintList</span>(SqList* L, <span class="pl-k">char</span>* filename, <span class="pl-k">char</span>* openmode);</td>
       </tr>
       <tr>
         <td id="L127" class="blob-num js-line-number" data-line-number="127"></td>
-        <td id="LC127" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	返回值:</span></td>
+        <td id="LC127" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	将顺序表输出到文件中, 数据之间以空格间隔, 不输出换行符</span></td>
       </tr>
       <tr>
         <td id="L128" class="blob-num js-line-number" data-line-number="128"></td>
-        <td id="LC128" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		-520: 成功</span></td>
+        <td id="LC128" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	参数:</span></td>
       </tr>
       <tr>
         <td id="L129" class="blob-num js-line-number" data-line-number="129"></td>
-        <td id="LC129" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		其他值: 失败</span></td>
+        <td id="LC129" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		filename: 指向字符串的指针, 指定输出文件的路径与文件名</span></td>
       </tr>
       <tr>
         <td id="L130" class="blob-num js-line-number" data-line-number="130"></td>
-        <td id="LC130" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span></td>
+        <td id="LC130" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		openmode: 指向字符串的指针, 指定打开文件的方式, 可以为 &quot;w&quot; 或 &quot;a&quot;</span></td>
       </tr>
       <tr>
         <td id="L131" class="blob-num js-line-number" data-line-number="131"></td>
-        <td id="LC131" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">fscanList</span>(SqList* L, <span class="pl-k">char</span>* filename, <span class="pl-k">char</span>* openmode);</td>
+        <td id="LC131" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			&quot;w&quot;: 覆盖原文件  &quot;a&quot;: 追加到文件末尾</span></td>
       </tr>
       <tr>
         <td id="L132" class="blob-num js-line-number" data-line-number="132"></td>
-        <td id="LC132" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	从文件中读取数据, 数据之间需以空格间隔. </span></td>
+        <td id="LC132" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	返回值:</span></td>
       </tr>
       <tr>
         <td id="L133" class="blob-num js-line-number" data-line-number="133"></td>
-        <td id="LC133" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	参数:</span></td>
+        <td id="LC133" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		-520: 成功</span></td>
       </tr>
       <tr>
         <td id="L134" class="blob-num js-line-number" data-line-number="134"></td>
-        <td id="LC134" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		filename: 指向字符串的指针, 指定读取文件的路径与文件名</span></td>
+        <td id="LC134" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		其他值: 失败</span></td>
       </tr>
       <tr>
         <td id="L135" class="blob-num js-line-number" data-line-number="135"></td>
-        <td id="LC135" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		openmode: 指向字符串的指针, 指定打开文件的方式, 可以为 &quot;r&quot; 或 &quot;r&quot;</span></td>
+        <td id="LC135" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span></td>
       </tr>
       <tr>
         <td id="L136" class="blob-num js-line-number" data-line-number="136"></td>
-        <td id="LC136" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	返回值:</span></td>
+        <td id="LC136" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">fscanList</span>(SqList* L, <span class="pl-k">char</span>* filename, <span class="pl-k">char</span>* openmode);</td>
       </tr>
       <tr>
         <td id="L137" class="blob-num js-line-number" data-line-number="137"></td>
-        <td id="LC137" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		-520: 成功</span></td>
+        <td id="LC137" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	从文件中读取数据, 数据之间需以空格间隔. </span></td>
       </tr>
       <tr>
         <td id="L138" class="blob-num js-line-number" data-line-number="138"></td>
-        <td id="LC138" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		其他值: 失败</span></td>
+        <td id="LC138" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	参数:</span></td>
       </tr>
       <tr>
         <td id="L139" class="blob-num js-line-number" data-line-number="139"></td>
-        <td id="LC139" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	注意:</span></td>
+        <td id="LC139" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		filename: 指向字符串的指针, 指定读取文件的路径与文件名</span></td>
       </tr>
       <tr>
         <td id="L140" class="blob-num js-line-number" data-line-number="140"></td>
-        <td id="LC140" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		若顺序表中有数据, 此函数不会覆盖原有数据,</span></td>
+        <td id="LC140" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		openmode: 指向字符串的指针, 指定打开文件的方式, 可以为 &quot;r&quot; 或 &quot;r&quot;</span></td>
       </tr>
       <tr>
         <td id="L141" class="blob-num js-line-number" data-line-number="141"></td>
-        <td id="LC141" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		读取到的数据会追加到原有数据后面</span></td>
+        <td id="LC141" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	返回值:</span></td>
       </tr>
       <tr>
         <td id="L142" class="blob-num js-line-number" data-line-number="142"></td>
-        <td id="LC142" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		读取过程此函数会根据需要自动扩展顺序表空间</span></td>
+        <td id="LC142" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		-520: 成功</span></td>
       </tr>
       <tr>
         <td id="L143" class="blob-num js-line-number" data-line-number="143"></td>
-        <td id="LC143" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		可以使用PrintListInfo输出顺序表参数信息</span></td>
+        <td id="LC143" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		其他值: 失败</span></td>
       </tr>
       <tr>
         <td id="L144" class="blob-num js-line-number" data-line-number="144"></td>
-        <td id="LC144" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span></td>
+        <td id="LC144" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	注意:</span></td>
+      </tr>
+      <tr>
+        <td id="L145" class="blob-num js-line-number" data-line-number="145"></td>
+        <td id="LC145" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		若顺序表中有数据, 此函数不会覆盖原有数据,</span></td>
+      </tr>
+      <tr>
+        <td id="L146" class="blob-num js-line-number" data-line-number="146"></td>
+        <td id="LC146" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		读取到的数据会追加到原有数据后面</span></td>
+      </tr>
+      <tr>
+        <td id="L147" class="blob-num js-line-number" data-line-number="147"></td>
+        <td id="LC147" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		读取过程此函数会根据需要自动扩展顺序表空间</span></td>
+      </tr>
+      <tr>
+        <td id="L148" class="blob-num js-line-number" data-line-number="148"></td>
+        <td id="LC148" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		可以使用PrintListInfo输出顺序表参数信息</span></td>
+      </tr>
+      <tr>
+        <td id="L149" class="blob-num js-line-number" data-line-number="149"></td>
+        <td id="LC149" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span></td>
       </tr>
 </table>
 
