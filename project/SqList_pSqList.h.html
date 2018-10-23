@@ -67,9 +67,9 @@
 
 
   <div class="file-info">
-      318 lines (270 sloc)
+      322 lines (274 sloc)
       <span class="file-info-divider"></span>
-    4.73 GB
+    4.78 GB
   </div>
 </div>
 
@@ -1059,7 +1059,7 @@
       </tr>
       <tr>
         <td id="L241" class="blob-num js-line-number" data-line-number="241"></td>
-        <td id="LC241" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">FormatList</span>(SqList* L, ElemType (*f)(ElemType))</td>
+        <td id="LC241" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">ListTraverse</span>(SqList* L, <span class="pl-k">int</span> (*visit)(ElemType*))</td>
       </tr>
       <tr>
         <td id="L242" class="blob-num js-line-number" data-line-number="242"></td>
@@ -1071,225 +1071,221 @@
       </tr>
       <tr>
         <td id="L244" class="blob-num js-line-number" data-line-number="244"></td>
-        <td id="LC244" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, len=L-&gt;<span class="pl-smi">length</span>;</td>
+        <td id="LC244" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, len=L-&gt;<span class="pl-smi">length</span>, ret;</td>
       </tr>
       <tr>
         <td id="L245" class="blob-num js-line-number" data-line-number="245"></td>
-        <td id="LC245" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">1</span>;i&lt;=len;i++,pe++)</td>
+        <td id="LC245" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">1</span>;i&lt;=len;i++,pe++){</td>
       </tr>
       <tr>
         <td id="L246" class="blob-num js-line-number" data-line-number="246"></td>
-        <td id="LC246" class="blob-code blob-code-inner js-file-line">		*pe=<span class="pl-c1">f</span>(*pe);</td>
+        <td id="LC246" class="blob-code blob-code-inner js-file-line">		ret=<span class="pl-c1">visit</span>(pe);</td>
       </tr>
       <tr>
         <td id="L247" class="blob-num js-line-number" data-line-number="247"></td>
-        <td id="LC247" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC247" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(ret)</td>
       </tr>
       <tr>
         <td id="L248" class="blob-num js-line-number" data-line-number="248"></td>
-        <td id="LC248" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC248" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">return</span> ret;</td>
       </tr>
       <tr>
         <td id="L249" class="blob-num js-line-number" data-line-number="249"></td>
-        <td id="LC249" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">fprintList</span>(SqList* L, <span class="pl-k">char</span>* filename, <span class="pl-k">char</span>* openmode)</td>
+        <td id="LC249" class="blob-code blob-code-inner js-file-line">	}</td>
       </tr>
       <tr>
         <td id="L250" class="blob-num js-line-number" data-line-number="250"></td>
-        <td id="LC250" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC250" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
       </tr>
       <tr>
         <td id="L251" class="blob-num js-line-number" data-line-number="251"></td>
-        <td id="LC251" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">FILE</span>* fp;</td>
+        <td id="LC251" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L252" class="blob-num js-line-number" data-line-number="252"></td>
-        <td id="LC252" class="blob-code blob-code-inner js-file-line">	ElemType* pe;</td>
+        <td id="LC252" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L253" class="blob-num js-line-number" data-line-number="253"></td>
-        <td id="LC253" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, len;</td>
+        <td id="LC253" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">fprintList</span>(SqList* L, <span class="pl-k">char</span>* filename, <span class="pl-k">char</span>* openmode)</td>
       </tr>
       <tr>
         <td id="L254" class="blob-num js-line-number" data-line-number="254"></td>
-        <td id="LC254" class="blob-code blob-code-inner js-file-line">	fp=<span class="pl-c1">fopen</span>(filename, openmode);</td>
+        <td id="LC254" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L255" class="blob-num js-line-number" data-line-number="255"></td>
-        <td id="LC255" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!fp)</td>
+        <td id="LC255" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">FILE</span>* fp;</td>
       </tr>
       <tr>
         <td id="L256" class="blob-num js-line-number" data-line-number="256"></td>
-        <td id="LC256" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
+        <td id="LC256" class="blob-code blob-code-inner js-file-line">	ElemType* pe;</td>
       </tr>
       <tr>
         <td id="L257" class="blob-num js-line-number" data-line-number="257"></td>
-        <td id="LC257" class="blob-code blob-code-inner js-file-line">	pe=L-&gt;<span class="pl-smi">elem</span>;</td>
+        <td id="LC257" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, len;</td>
       </tr>
       <tr>
         <td id="L258" class="blob-num js-line-number" data-line-number="258"></td>
-        <td id="LC258" class="blob-code blob-code-inner js-file-line">	len=L-&gt;<span class="pl-smi">length</span>;</td>
+        <td id="LC258" class="blob-code blob-code-inner js-file-line">	fp=<span class="pl-c1">fopen</span>(filename, openmode);</td>
       </tr>
       <tr>
         <td id="L259" class="blob-num js-line-number" data-line-number="259"></td>
-        <td id="LC259" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	if(strchr(openmode, &#39;b&#39;))</span></td>
+        <td id="LC259" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!fp)</td>
       </tr>
       <tr>
         <td id="L260" class="blob-num js-line-number" data-line-number="260"></td>
-        <td id="LC260" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		if( fwrite(pe, len*sizeof(ElemType), 1, fp)&lt;=0 )</span></td>
+        <td id="LC260" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
       </tr>
       <tr>
         <td id="L261" class="blob-num js-line-number" data-line-number="261"></td>
-        <td id="LC261" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			return ferror(fp);</span></td>
+        <td id="LC261" class="blob-code blob-code-inner js-file-line">	pe=L-&gt;<span class="pl-smi">elem</span>;</td>
       </tr>
       <tr>
         <td id="L262" class="blob-num js-line-number" data-line-number="262"></td>
-        <td id="LC262" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	else</span></td>
+        <td id="LC262" class="blob-code blob-code-inner js-file-line">	len=L-&gt;<span class="pl-smi">length</span>;</td>
       </tr>
       <tr>
         <td id="L263" class="blob-num js-line-number" data-line-number="263"></td>
-        <td id="LC263" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span>		<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;len;i++,pe++)</td>
+        <td id="LC263" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	if(strchr(openmode, &#39;b&#39;))</span></td>
       </tr>
       <tr>
         <td id="L264" class="blob-num js-line-number" data-line-number="264"></td>
-        <td id="LC264" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">if</span>((<span class="pl-c1">fprintf</span>(fp,<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-c1">%d</span> <span class="pl-pds">&quot;</span></span>,*pe))&lt;=<span class="pl-c1">0</span>)</td>
+        <td id="LC264" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		if( fwrite(pe, len*sizeof(ElemType), 1, fp)&lt;=0 )</span></td>
       </tr>
       <tr>
         <td id="L265" class="blob-num js-line-number" data-line-number="265"></td>
-        <td id="LC265" class="blob-code blob-code-inner js-file-line">				<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
+        <td id="LC265" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			return ferror(fp);</span></td>
       </tr>
       <tr>
         <td id="L266" class="blob-num js-line-number" data-line-number="266"></td>
-        <td id="LC266" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(<span class="pl-c1">fclose</span>(fp))</td>
+        <td id="LC266" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	else</span></td>
       </tr>
       <tr>
         <td id="L267" class="blob-num js-line-number" data-line-number="267"></td>
-        <td id="LC267" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
+        <td id="LC267" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span>		<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;len;i++,pe++)</td>
       </tr>
       <tr>
         <td id="L268" class="blob-num js-line-number" data-line-number="268"></td>
-        <td id="LC268" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> -<span class="pl-c1">520</span>;</td>
+        <td id="LC268" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">if</span>((<span class="pl-c1">fprintf</span>(fp,<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-c1">%d</span> <span class="pl-pds">&quot;</span></span>,*pe))&lt;=<span class="pl-c1">0</span>)</td>
       </tr>
       <tr>
         <td id="L269" class="blob-num js-line-number" data-line-number="269"></td>
-        <td id="LC269" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC269" class="blob-code blob-code-inner js-file-line">				<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
       </tr>
       <tr>
         <td id="L270" class="blob-num js-line-number" data-line-number="270"></td>
-        <td id="LC270" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC270" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(<span class="pl-c1">fclose</span>(fp))</td>
       </tr>
       <tr>
         <td id="L271" class="blob-num js-line-number" data-line-number="271"></td>
-        <td id="LC271" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">fscanList</span>(SqList* L, <span class="pl-k">char</span>* filename, <span class="pl-k">char</span>* openmode)</td>
+        <td id="LC271" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
       </tr>
       <tr>
         <td id="L272" class="blob-num js-line-number" data-line-number="272"></td>
-        <td id="LC272" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC272" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> -<span class="pl-c1">520</span>;</td>
       </tr>
       <tr>
         <td id="L273" class="blob-num js-line-number" data-line-number="273"></td>
-        <td id="LC273" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">FILE</span>* fp;</td>
+        <td id="LC273" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L274" class="blob-num js-line-number" data-line-number="274"></td>
-        <td id="LC274" class="blob-code blob-code-inner js-file-line">	ElemType e;</td>
+        <td id="LC274" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L275" class="blob-num js-line-number" data-line-number="275"></td>
-        <td id="LC275" class="blob-code blob-code-inner js-file-line">	fp=<span class="pl-c1">fopen</span>(filename, openmode);</td>
+        <td id="LC275" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">fscanList</span>(SqList* L, <span class="pl-k">char</span>* filename, <span class="pl-k">char</span>* openmode)</td>
       </tr>
       <tr>
         <td id="L276" class="blob-num js-line-number" data-line-number="276"></td>
-        <td id="LC276" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!fp)</td>
+        <td id="LC276" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L277" class="blob-num js-line-number" data-line-number="277"></td>
-        <td id="LC277" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
+        <td id="LC277" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">FILE</span>* fp;</td>
       </tr>
       <tr>
         <td id="L278" class="blob-num js-line-number" data-line-number="278"></td>
-        <td id="LC278" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	if(strchr(openmode, &#39;b&#39;))</span></td>
+        <td id="LC278" class="blob-code blob-code-inner js-file-line">	ElemType e;</td>
       </tr>
       <tr>
         <td id="L279" class="blob-num js-line-number" data-line-number="279"></td>
-        <td id="LC279" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		while( fread(&amp;e, sizeof(ElemType), 1, fp)==1 ){</span></td>
+        <td id="LC279" class="blob-code blob-code-inner js-file-line">	fp=<span class="pl-c1">fopen</span>(filename, openmode);</td>
       </tr>
       <tr>
         <td id="L280" class="blob-num js-line-number" data-line-number="280"></td>
-        <td id="LC280" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			ListInsert(L, L-&gt;length+1, e);</span></td>
+        <td id="LC280" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!fp)</td>
       </tr>
       <tr>
         <td id="L281" class="blob-num js-line-number" data-line-number="281"></td>
-        <td id="LC281" class="blob-code blob-code-inner js-file-line"><span class="pl-c">				if( feof(fp) )</span></td>
+        <td id="LC281" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
       </tr>
       <tr>
         <td id="L282" class="blob-num js-line-number" data-line-number="282"></td>
-        <td id="LC282" class="blob-code blob-code-inner js-file-line"><span class="pl-c">					break;</span></td>
+        <td id="LC282" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span>	if(strchr(openmode, &#39;b&#39;))</span></td>
       </tr>
       <tr>
         <td id="L283" class="blob-num js-line-number" data-line-number="283"></td>
-        <td id="LC283" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		}</span></td>
+        <td id="LC283" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		while( fread(&amp;e, sizeof(ElemType), 1, fp)==1 ){</span></td>
       </tr>
       <tr>
         <td id="L284" class="blob-num js-line-number" data-line-number="284"></td>
-        <td id="LC284" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	else</span></td>
+        <td id="LC284" class="blob-code blob-code-inner js-file-line"><span class="pl-c">			ListInsert(L, L-&gt;length+1, e);</span></td>
       </tr>
       <tr>
         <td id="L285" class="blob-num js-line-number" data-line-number="285"></td>
-        <td id="LC285" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span>		<span class="pl-k">while</span>( <span class="pl-c1">fscanf</span>(fp,<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-c1">%d</span><span class="pl-pds">&quot;</span></span>,&amp;e)&gt;<span class="pl-c1">0</span> ){</td>
+        <td id="LC285" class="blob-code blob-code-inner js-file-line"><span class="pl-c">				if( feof(fp) )</span></td>
       </tr>
       <tr>
         <td id="L286" class="blob-num js-line-number" data-line-number="286"></td>
-        <td id="LC286" class="blob-code blob-code-inner js-file-line">			<span class="pl-c1">ListInsert</span>(L, L-&gt;<span class="pl-smi">length</span>+<span class="pl-c1">1</span>, e);</td>
+        <td id="LC286" class="blob-code blob-code-inner js-file-line"><span class="pl-c">					break;</span></td>
       </tr>
       <tr>
         <td id="L287" class="blob-num js-line-number" data-line-number="287"></td>
-        <td id="LC287" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">if</span>( <span class="pl-c1">feof</span>(fp) )</td>
+        <td id="LC287" class="blob-code blob-code-inner js-file-line"><span class="pl-c">		}</span></td>
       </tr>
       <tr>
         <td id="L288" class="blob-num js-line-number" data-line-number="288"></td>
-        <td id="LC288" class="blob-code blob-code-inner js-file-line">				<span class="pl-k">break</span>;</td>
+        <td id="LC288" class="blob-code blob-code-inner js-file-line"><span class="pl-c">	else</span></td>
       </tr>
       <tr>
         <td id="L289" class="blob-num js-line-number" data-line-number="289"></td>
-        <td id="LC289" class="blob-code blob-code-inner js-file-line">		}</td>
+        <td id="LC289" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span>		<span class="pl-k">while</span>( <span class="pl-c1">fscanf</span>(fp,<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-c1">%d</span><span class="pl-pds">&quot;</span></span>,&amp;e)&gt;<span class="pl-c1">0</span> ){</td>
       </tr>
       <tr>
         <td id="L290" class="blob-num js-line-number" data-line-number="290"></td>
-        <td id="LC290" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(<span class="pl-c1">fclose</span>(fp))</td>
+        <td id="LC290" class="blob-code blob-code-inner js-file-line">			<span class="pl-c1">ListInsert</span>(L, L-&gt;<span class="pl-smi">length</span>+<span class="pl-c1">1</span>, e);</td>
       </tr>
       <tr>
         <td id="L291" class="blob-num js-line-number" data-line-number="291"></td>
-        <td id="LC291" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
+        <td id="LC291" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">if</span>( <span class="pl-c1">feof</span>(fp) )</td>
       </tr>
       <tr>
         <td id="L292" class="blob-num js-line-number" data-line-number="292"></td>
-        <td id="LC292" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> -<span class="pl-c1">520</span>;</td>
+        <td id="LC292" class="blob-code blob-code-inner js-file-line">				<span class="pl-k">break</span>;</td>
       </tr>
       <tr>
         <td id="L293" class="blob-num js-line-number" data-line-number="293"></td>
-        <td id="LC293" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC293" class="blob-code blob-code-inner js-file-line">		}</td>
       </tr>
       <tr>
         <td id="L294" class="blob-num js-line-number" data-line-number="294"></td>
-        <td id="LC294" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC294" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(<span class="pl-c1">fclose</span>(fp))</td>
       </tr>
       <tr>
         <td id="L295" class="blob-num js-line-number" data-line-number="295"></td>
-        <td id="LC295" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC295" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">ferror</span>(fp);</td>
       </tr>
       <tr>
         <td id="L296" class="blob-num js-line-number" data-line-number="296"></td>
-        <td id="LC296" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC296" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> -<span class="pl-c1">520</span>;</td>
       </tr>
       <tr>
         <td id="L297" class="blob-num js-line-number" data-line-number="297"></td>
-        <td id="LC297" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC297" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L298" class="blob-num js-line-number" data-line-number="298"></td>
@@ -1393,7 +1389,27 @@
       </tr>
       <tr>
         <td id="L318" class="blob-num js-line-number" data-line-number="318"></td>
-        <td id="LC318" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">endif</span></td>
+        <td id="LC318" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L319" class="blob-num js-line-number" data-line-number="319"></td>
+        <td id="LC319" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L320" class="blob-num js-line-number" data-line-number="320"></td>
+        <td id="LC320" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L321" class="blob-num js-line-number" data-line-number="321"></td>
+        <td id="LC321" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L322" class="blob-num js-line-number" data-line-number="322"></td>
+        <td id="LC322" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">endif</span></td>
       </tr>
 </table>
 </div>
