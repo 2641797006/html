@@ -67,9 +67,9 @@
 
 
   <div class="file-info">
-      120 lines (101 sloc)
+      126 lines (105 sloc)
       <span class="file-info-divider"></span>
-    1.92 GB
+    1.97 GB
   </div>
 </div>
 
@@ -476,90 +476,90 @@
       </tr>
       <tr>
         <td id="L97" class="blob-num js-line-number" data-line-number="97"></td>
-        <td id="LC97" class="blob-code blob-code-inner js-file-line">	p = _&gt;<span class="pl-k">sizeof</span>(QWORD) ? (<span class="pl-k">void</span>*)*(&amp;_+<span class="pl-c1">1</span>) : (<span class="pl-k">void</span>*)(&amp;_+<span class="pl-c1">1</span>);</td>
+        <td id="LC97" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L98" class="blob-num js-line-number" data-line-number="98"></td>
-        <td id="LC98" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">memcpy</span>(S-&gt;<span class="pl-smi">top</span>+<span class="pl-c1">1</span>, p, _);</td>
+        <td id="LC98" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">ifdef</span> __GNUC__</td>
       </tr>
       <tr>
         <td id="L99" class="blob-num js-line-number" data-line-number="99"></td>
-        <td id="LC99" class="blob-code blob-code-inner js-file-line">	S-&gt;<span class="pl-smi">top</span>+=size;</td>
+        <td id="LC99" class="blob-code blob-code-inner js-file-line">	p = _&gt;<span class="pl-k">sizeof</span>(QWORD) ? (<span class="pl-k">void</span>*)*(&amp;_+<span class="pl-c1">1</span>) : (<span class="pl-k">void</span>*)(&amp;_+<span class="pl-c1">1</span>);</td>
       </tr>
       <tr>
         <td id="L100" class="blob-num js-line-number" data-line-number="100"></td>
-        <td id="LC100" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+        <td id="LC100" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">else</span></td>
       </tr>
       <tr>
         <td id="L101" class="blob-num js-line-number" data-line-number="101"></td>
-        <td id="LC101" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC101" class="blob-code blob-code-inner js-file-line">	p = (<span class="pl-k">void</span>*)(&amp;_+<span class="pl-c1">1</span>);</td>
       </tr>
       <tr>
         <td id="L102" class="blob-num js-line-number" data-line-number="102"></td>
-        <td id="LC102" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC102" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">endif</span></td>
       </tr>
       <tr>
         <td id="L103" class="blob-num js-line-number" data-line-number="103"></td>
-        <td id="LC103" class="blob-code blob-code-inner js-file-line">QWORD <span class="pl-en">Ppop</span>(QWORD _, <span class="pl-k">void</span>* address)</td>
+        <td id="LC103" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L104" class="blob-num js-line-number" data-line-number="104"></td>
-        <td id="LC104" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC104" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">memcpy</span>(S-&gt;<span class="pl-smi">top</span>+<span class="pl-c1">1</span>, p, _);</td>
       </tr>
       <tr>
         <td id="L105" class="blob-num js-line-number" data-line-number="105"></td>
-        <td id="LC105" class="blob-code blob-code-inner js-file-line">	QWORD size=(_+<span class="pl-k">sizeof</span>(QWORD)-<span class="pl-c1">1</span>)/<span class="pl-k">sizeof</span>(QWORD);</td>
+        <td id="LC105" class="blob-code blob-code-inner js-file-line">	S-&gt;<span class="pl-smi">top</span>+=size;</td>
       </tr>
       <tr>
         <td id="L106" class="blob-num js-line-number" data-line-number="106"></td>
-        <td id="LC106" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(S-&gt;<span class="pl-smi">top</span>-S-&gt;<span class="pl-smi">base</span>&lt;size)</td>
+        <td id="LC106" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
       </tr>
       <tr>
         <td id="L107" class="blob-num js-line-number" data-line-number="107"></td>
-        <td id="LC107" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> -<span class="pl-c1">1</span>;</td>
+        <td id="LC107" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L108" class="blob-num js-line-number" data-line-number="108"></td>
-        <td id="LC108" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">memcpy</span>(address, S-&gt;<span class="pl-smi">top</span>-size+<span class="pl-c1">1</span>, _);</td>
+        <td id="LC108" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L109" class="blob-num js-line-number" data-line-number="109"></td>
-        <td id="LC109" class="blob-code blob-code-inner js-file-line">	S-&gt;<span class="pl-smi">top</span>-=size;</td>
+        <td id="LC109" class="blob-code blob-code-inner js-file-line">QWORD <span class="pl-en">Ppop</span>(QWORD _, <span class="pl-k">void</span>* address)</td>
       </tr>
       <tr>
         <td id="L110" class="blob-num js-line-number" data-line-number="110"></td>
-        <td id="LC110" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+        <td id="LC110" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L111" class="blob-num js-line-number" data-line-number="111"></td>
-        <td id="LC111" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC111" class="blob-code blob-code-inner js-file-line">	QWORD size=(_+<span class="pl-k">sizeof</span>(QWORD)-<span class="pl-c1">1</span>)/<span class="pl-k">sizeof</span>(QWORD);</td>
       </tr>
       <tr>
         <td id="L112" class="blob-num js-line-number" data-line-number="112"></td>
-        <td id="LC112" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC112" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(S-&gt;<span class="pl-smi">top</span>-S-&gt;<span class="pl-smi">base</span>&lt;size)</td>
       </tr>
       <tr>
         <td id="L113" class="blob-num js-line-number" data-line-number="113"></td>
-        <td id="LC113" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">push</span>(<span class="pl-v">value</span>) Ppush(<span class="pl-k">sizeof</span>(value), value)</td>
+        <td id="LC113" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> -<span class="pl-c1">1</span>;</td>
       </tr>
       <tr>
         <td id="L114" class="blob-num js-line-number" data-line-number="114"></td>
-        <td id="LC114" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">pop</span>(<span class="pl-v">address</span>) Ppop(<span class="pl-k">sizeof</span>(*(address)), (<span class="pl-k">void</span>*)(address))</td>
+        <td id="LC114" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">memcpy</span>(address, S-&gt;<span class="pl-smi">top</span>-size+<span class="pl-c1">1</span>, _);</td>
       </tr>
       <tr>
         <td id="L115" class="blob-num js-line-number" data-line-number="115"></td>
-        <td id="LC115" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC115" class="blob-code blob-code-inner js-file-line">	S-&gt;<span class="pl-smi">top</span>-=size;</td>
       </tr>
       <tr>
         <td id="L116" class="blob-num js-line-number" data-line-number="116"></td>
-        <td id="LC116" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">Push</span>(<span class="pl-v">x</span>) push(x)</td>
+        <td id="LC116" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
       </tr>
       <tr>
         <td id="L117" class="blob-num js-line-number" data-line-number="117"></td>
-        <td id="LC117" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">Pop</span>(<span class="pl-v">x</span>) pop(x)</td>
+        <td id="LC117" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L118" class="blob-num js-line-number" data-line-number="118"></td>
@@ -568,11 +568,37 @@
       </tr>
       <tr>
         <td id="L119" class="blob-num js-line-number" data-line-number="119"></td>
-        <td id="LC119" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">undef</span> S</td>
+        <td id="LC119" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">push</span>(<span class="pl-v">value</span>) Ppush(<span class="pl-k">sizeof</span>(value), value)</td>
       </tr>
       <tr>
         <td id="L120" class="blob-num js-line-number" data-line-number="120"></td>
-        <td id="LC120" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">endif</span></td>
+        <td id="LC120" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">pop</span>(<span class="pl-v">address</span>) Ppop(<span class="pl-k">sizeof</span>(*(address)), (<span class="pl-k">void</span>*)(address))</td>
+      </tr>
+      <tr>
+        <td id="L121" class="blob-num js-line-number" data-line-number="121"></td>
+        <td id="LC121" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L122" class="blob-num js-line-number" data-line-number="122"></td>
+        <td id="LC122" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">Push</span>(<span class="pl-v">x</span>) push(x)</td>
+      </tr>
+      <tr>
+        <td id="L123" class="blob-num js-line-number" data-line-number="123"></td>
+        <td id="LC123" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">Pop</span>(<span class="pl-v">x</span>) pop(x)</td>
+      </tr>
+      <tr>
+        <td id="L124" class="blob-num js-line-number" data-line-number="124"></td>
+        <td id="LC124" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L125" class="blob-num js-line-number" data-line-number="125"></td>
+        <td id="LC125" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">undef</span> S</td>
+      </tr>
+      <tr>
+        <td id="L126" class="blob-num js-line-number" data-line-number="126"></td>
+        <td id="LC126" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">endif</span></td>
       </tr>
 </table>
 </div>
