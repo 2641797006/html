@@ -65,9 +65,9 @@
 
 
   <div class="file-info">
-      326 lines (293 sloc)
+      270 lines (251 sloc)
       <span class="file-info-divider"></span>
-    5.18 GB
+    4.5 GB
   </div>
 </div>
 
@@ -428,536 +428,538 @@
       </tr>
       <tr>
         <td id="L87" class="blob-num js-line-number" data-line-number="87"></td>
-        <td id="LC87" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">ifndef</span> _PDETVALUEX_</td>
+        <td id="LC87" class="blob-code blob-code-inner js-file-line"><span class="pl-k">double</span> <span class="pl-en">DetValue</span>(MATRIX* mat)</td>
       </tr>
       <tr>
         <td id="L88" class="blob-num js-line-number" data-line-number="88"></td>
-        <td id="LC88" class="blob-code blob-code-inner js-file-line"><span class="pl-k">double</span> <span class="pl-en">DetValue</span>(MATRIX* mat)</td>
+        <td id="LC88" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L89" class="blob-num js-line-number" data-line-number="89"></td>
-        <td id="LC89" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC89" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span>** bp=mat-&gt;<span class="pl-smi">bp</span>;</td>
       </tr>
       <tr>
         <td id="L90" class="blob-num js-line-number" data-line-number="90"></td>
-        <td id="LC90" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span>** bp=mat-&gt;<span class="pl-smi">bp</span>;</td>
+        <td id="LC90" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> det=<span class="pl-c1">0</span>, product;</td>
       </tr>
       <tr>
         <td id="L91" class="blob-num js-line-number" data-line-number="91"></td>
-        <td id="LC91" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> det=<span class="pl-c1">0</span>, product;</td>
+        <td id="LC91" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> order=mat-&gt;<span class="pl-smi">row</span>;</td>
       </tr>
       <tr>
         <td id="L92" class="blob-num js-line-number" data-line-number="92"></td>
-        <td id="LC92" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> order=mat-&gt;<span class="pl-smi">row</span>;</td>
+        <td id="LC92" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(mat-&gt;<span class="pl-smi">col</span>!=order){</td>
       </tr>
       <tr>
         <td id="L93" class="blob-num js-line-number" data-line-number="93"></td>
-        <td id="LC93" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(mat-&gt;<span class="pl-smi">col</span>!=order){</td>
+        <td id="LC93" class="blob-code blob-code-inner js-file-line">		__MATRIX__=-<span class="pl-c1">1</span>;</td>
       </tr>
       <tr>
         <td id="L94" class="blob-num js-line-number" data-line-number="94"></td>
-        <td id="LC94" class="blob-code blob-code-inner js-file-line">		__MATRIX__=-<span class="pl-c1">1</span>;</td>
+        <td id="LC94" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
       </tr>
       <tr>
         <td id="L95" class="blob-num js-line-number" data-line-number="95"></td>
-        <td id="LC95" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+        <td id="LC95" class="blob-code blob-code-inner js-file-line">	}</td>
       </tr>
       <tr>
         <td id="L96" class="blob-num js-line-number" data-line-number="96"></td>
-        <td id="LC96" class="blob-code blob-code-inner js-file-line">	}</td>
+        <td id="LC96" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> arr[order+<span class="pl-c1">2</span>], *a=arr+<span class="pl-c1">1</span>, *t=a+order-<span class="pl-c1">1</span>, *p, *q, i, x=<span class="pl-c1">0x2</span>, w=<span class="pl-c1">1</span>, v=<span class="pl-c1">1</span>;</td>
       </tr>
       <tr>
         <td id="L97" class="blob-num js-line-number" data-line-number="97"></td>
-        <td id="LC97" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> arr[order+<span class="pl-c1">2</span>], *a=arr+<span class="pl-c1">1</span>, *t=a+order-<span class="pl-c1">1</span>, *p, *q, i, x=<span class="pl-c1">0x2</span>, w=<span class="pl-c1">1</span>, v=<span class="pl-c1">1</span>;</td>
+        <td id="LC97" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(p=a;p&lt;=t;p++)</td>
       </tr>
       <tr>
         <td id="L98" class="blob-num js-line-number" data-line-number="98"></td>
-        <td id="LC98" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(p=a;p&lt;=t;p++)</td>
+        <td id="LC98" class="blob-code blob-code-inner js-file-line">		*p=p-a;</td>
       </tr>
       <tr>
         <td id="L99" class="blob-num js-line-number" data-line-number="99"></td>
-        <td id="LC99" class="blob-code blob-code-inner js-file-line">		*p=p-a;</td>
+        <td id="LC99" class="blob-code blob-code-inner js-file-line">	arr[<span class="pl-c1">0</span>]=-<span class="pl-c1">1</span>;</td>
       </tr>
       <tr>
         <td id="L100" class="blob-num js-line-number" data-line-number="100"></td>
-        <td id="LC100" class="blob-code blob-code-inner js-file-line">	arr[<span class="pl-c1">0</span>]=-<span class="pl-c1">1</span>;</td>
+        <td id="LC100" class="blob-code blob-code-inner js-file-line">	a[order]=-<span class="pl-c1">1</span>;</td>
       </tr>
       <tr>
         <td id="L101" class="blob-num js-line-number" data-line-number="101"></td>
-        <td id="LC101" class="blob-code blob-code-inner js-file-line">	a[order]=-<span class="pl-c1">1</span>;</td>
+        <td id="LC101" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">do</span>{</td>
       </tr>
       <tr>
         <td id="L102" class="blob-num js-line-number" data-line-number="102"></td>
-        <td id="LC102" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">do</span>{</td>
+        <td id="LC102" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(p=a,product=<span class="pl-c1">1</span>,i=<span class="pl-c1">0</span>; p&lt;=t; p++,i++)</td>
       </tr>
       <tr>
         <td id="L103" class="blob-num js-line-number" data-line-number="103"></td>
-        <td id="LC103" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(p=a,product=<span class="pl-c1">1</span>,i=<span class="pl-c1">0</span>; p&lt;=t; p++,i++)</td>
+        <td id="LC103" class="blob-code blob-code-inner js-file-line">			product*=*(*(bp+i)+*p);</td>
       </tr>
       <tr>
         <td id="L104" class="blob-num js-line-number" data-line-number="104"></td>
-        <td id="LC104" class="blob-code blob-code-inner js-file-line">			product*=*(*(bp+i)+*p);</td>
+        <td id="LC104" class="blob-code blob-code-inner js-file-line">		p=t, w=<span class="pl-c1">1</span>;</td>
       </tr>
       <tr>
         <td id="L105" class="blob-num js-line-number" data-line-number="105"></td>
-        <td id="LC105" class="blob-code blob-code-inner js-file-line">		p=t, w=<span class="pl-c1">1</span>;</td>
+        <td id="LC105" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(*p&lt;*--p)</td>
       </tr>
       <tr>
         <td id="L106" class="blob-num js-line-number" data-line-number="106"></td>
-        <td id="LC106" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(*p&lt;*--p)</td>
+        <td id="LC106" class="blob-code blob-code-inner js-file-line">			w++;</td>
       </tr>
       <tr>
         <td id="L107" class="blob-num js-line-number" data-line-number="107"></td>
-        <td id="LC107" class="blob-code blob-code-inner js-file-line">			w++;</td>
+        <td id="LC107" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(x&amp;=<span class="pl-c1">3</span>, (x+=<span class="pl-c1">1</span>)&amp;<span class="pl-c1">2</span>)</td>
       </tr>
       <tr>
         <td id="L108" class="blob-num js-line-number" data-line-number="108"></td>
-        <td id="LC108" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(x&amp;=<span class="pl-c1">3</span>, (x+=<span class="pl-c1">1</span>)&amp;<span class="pl-c1">2</span>)</td>
+        <td id="LC108" class="blob-code blob-code-inner js-file-line">			det+=product;</td>
       </tr>
       <tr>
         <td id="L109" class="blob-num js-line-number" data-line-number="109"></td>
-        <td id="LC109" class="blob-code blob-code-inner js-file-line">			det+=product;</td>
+        <td id="LC109" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">else</span></td>
       </tr>
       <tr>
         <td id="L110" class="blob-num js-line-number" data-line-number="110"></td>
-        <td id="LC110" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">else</span></td>
+        <td id="LC110" class="blob-code blob-code-inner js-file-line">			det-=product;</td>
       </tr>
       <tr>
         <td id="L111" class="blob-num js-line-number" data-line-number="111"></td>
-        <td id="LC111" class="blob-code blob-code-inner js-file-line">			det-=product;</td>
+        <td id="LC111" class="blob-code blob-code-inner js-file-line">		(w-v-<span class="pl-c1">1</span>)/<span class="pl-c1">2</span>%<span class="pl-c1">2</span>==<span class="pl-c1">1</span> ? ( x=((x&amp;<span class="pl-c1">2</span>)==<span class="pl-c1">0</span> ? <span class="pl-c1">2</span> : <span class="pl-c1">0</span>)) : <span class="pl-c1">0</span>;</td>
       </tr>
       <tr>
         <td id="L112" class="blob-num js-line-number" data-line-number="112"></td>
-        <td id="LC112" class="blob-code blob-code-inner js-file-line">		(w-v-<span class="pl-c1">1</span>)/<span class="pl-c1">2</span>%<span class="pl-c1">2</span>==<span class="pl-c1">1</span> ? ( x=((x&amp;<span class="pl-c1">2</span>)==<span class="pl-c1">0</span> ? <span class="pl-c1">2</span> : <span class="pl-c1">0</span>)) : <span class="pl-c1">0</span>;</td>
+        <td id="LC112" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(w&gt;=order)</td>
       </tr>
       <tr>
         <td id="L113" class="blob-num js-line-number" data-line-number="113"></td>
-        <td id="LC113" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(w&gt;=order)</td>
+        <td id="LC113" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">break</span>;</td>
       </tr>
       <tr>
         <td id="L114" class="blob-num js-line-number" data-line-number="114"></td>
-        <td id="LC114" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">break</span>;</td>
+        <td id="LC114" class="blob-code blob-code-inner js-file-line">		v=w, q=p;</td>
       </tr>
       <tr>
         <td id="L115" class="blob-num js-line-number" data-line-number="115"></td>
-        <td id="LC115" class="blob-code blob-code-inner js-file-line">		v=w, q=p;</td>
+        <td id="LC115" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(*++q&gt;*p);</td>
       </tr>
       <tr>
         <td id="L116" class="blob-num js-line-number" data-line-number="116"></td>
-        <td id="LC116" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(*++q&gt;*p);</td>
+        <td id="LC116" class="blob-code blob-code-inner js-file-line">		i=*--q, *q=*p, *p=i;</td>
       </tr>
       <tr>
         <td id="L117" class="blob-num js-line-number" data-line-number="117"></td>
-        <td id="LC117" class="blob-code blob-code-inner js-file-line">		i=*--q, *q=*p, *p=i;</td>
+        <td id="LC117" class="blob-code blob-code-inner js-file-line">		p++, q=t;</td>
       </tr>
       <tr>
         <td id="L118" class="blob-num js-line-number" data-line-number="118"></td>
-        <td id="LC118" class="blob-code blob-code-inner js-file-line">		p++, q=t;</td>
+        <td id="LC118" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(p&lt;q)</td>
       </tr>
       <tr>
         <td id="L119" class="blob-num js-line-number" data-line-number="119"></td>
-        <td id="LC119" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(p&lt;q)</td>
+        <td id="LC119" class="blob-code blob-code-inner js-file-line">			i=*p, *p++=*q, *q--=i;</td>
       </tr>
       <tr>
         <td id="L120" class="blob-num js-line-number" data-line-number="120"></td>
-        <td id="LC120" class="blob-code blob-code-inner js-file-line">			i=*p, *p++=*q, *q--=i;</td>
+        <td id="LC120" class="blob-code blob-code-inner js-file-line">	}<span class="pl-k">while</span>(<span class="pl-c1">1</span>);</td>
       </tr>
       <tr>
         <td id="L121" class="blob-num js-line-number" data-line-number="121"></td>
-        <td id="LC121" class="blob-code blob-code-inner js-file-line">	}<span class="pl-k">while</span>(<span class="pl-c1">1</span>);</td>
+        <td id="LC121" class="blob-code blob-code-inner js-file-line">	__MATRIX__=<span class="pl-c1">0</span>;</td>
       </tr>
       <tr>
         <td id="L122" class="blob-num js-line-number" data-line-number="122"></td>
-        <td id="LC122" class="blob-code blob-code-inner js-file-line">	__MATRIX__=<span class="pl-c1">0</span>;</td>
+        <td id="LC122" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> det;</td>
       </tr>
       <tr>
         <td id="L123" class="blob-num js-line-number" data-line-number="123"></td>
-        <td id="LC123" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> det;</td>
+        <td id="LC123" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L124" class="blob-num js-line-number" data-line-number="124"></td>
-        <td id="LC124" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC124" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L125" class="blob-num js-line-number" data-line-number="125"></td>
-        <td id="LC125" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC125" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">TransposeMatrix</span>(MATRIX* mat, MATRIX* rmat)</td>
       </tr>
       <tr>
         <td id="L126" class="blob-num js-line-number" data-line-number="126"></td>
-        <td id="LC126" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">else</span></td>
+        <td id="LC126" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L127" class="blob-num js-line-number" data-line-number="127"></td>
-        <td id="LC127" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC127" class="blob-code blob-code-inner js-file-line">	MATRIX* m;</td>
       </tr>
       <tr>
         <td id="L128" class="blob-num js-line-number" data-line-number="128"></td>
-        <td id="LC128" class="blob-code blob-code-inner js-file-line"><span class="pl-k">double</span> <span class="pl-en">DetValue</span>(MATRIX* mat)</td>
+        <td id="LC128" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!rmat){</td>
       </tr>
       <tr>
         <td id="L129" class="blob-num js-line-number" data-line-number="129"></td>
-        <td id="LC129" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC129" class="blob-code blob-code-inner js-file-line">		m=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
       </tr>
       <tr>
         <td id="L130" class="blob-num js-line-number" data-line-number="130"></td>
-        <td id="LC130" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span>** bp=mat-&gt;<span class="pl-smi">bp</span>;</td>
+        <td id="LC130" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>( !m || <span class="pl-c1">InitMatrix</span>(m, mat-&gt;<span class="pl-smi">col</span>, mat-&gt;<span class="pl-smi">row</span>) )</td>
       </tr>
       <tr>
         <td id="L131" class="blob-num js-line-number" data-line-number="131"></td>
-        <td id="LC131" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> det=<span class="pl-c1">0</span>, product;</td>
+        <td id="LC131" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
       </tr>
       <tr>
         <td id="L132" class="blob-num js-line-number" data-line-number="132"></td>
-        <td id="LC132" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> order=mat-&gt;<span class="pl-smi">row</span>;</td>
+        <td id="LC132" class="blob-code blob-code-inner js-file-line">	}</td>
       </tr>
       <tr>
         <td id="L133" class="blob-num js-line-number" data-line-number="133"></td>
-        <td id="LC133" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(mat-&gt;<span class="pl-smi">col</span>!=order){</td>
+        <td id="LC133" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">else</span></td>
       </tr>
       <tr>
         <td id="L134" class="blob-num js-line-number" data-line-number="134"></td>
-        <td id="LC134" class="blob-code blob-code-inner js-file-line">		__MATRIX__=-<span class="pl-c1">1</span>;</td>
+        <td id="LC134" class="blob-code blob-code-inner js-file-line">		m=rmat;</td>
       </tr>
       <tr>
         <td id="L135" class="blob-num js-line-number" data-line-number="135"></td>
-        <td id="LC135" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+        <td id="LC135" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
       </tr>
       <tr>
         <td id="L136" class="blob-num js-line-number" data-line-number="136"></td>
-        <td id="LC136" class="blob-code blob-code-inner js-file-line">	}</td>
+        <td id="LC136" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m-&gt;<span class="pl-smi">row</span>;i++)</td>
       </tr>
       <tr>
         <td id="L137" class="blob-num js-line-number" data-line-number="137"></td>
-        <td id="LC137" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> arr[order+<span class="pl-c1">2</span>], *a=arr+<span class="pl-c1">1</span>, *t=a+order-<span class="pl-c1">1</span>, *p, *q, i;</td>
+        <td id="LC137" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m-&gt;<span class="pl-smi">col</span>;j++)</td>
       </tr>
       <tr>
         <td id="L138" class="blob-num js-line-number" data-line-number="138"></td>
-        <td id="LC138" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(p=a;p&lt;=t;p++)</td>
+        <td id="LC138" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i)+j)=*(*(mat-&gt;<span class="pl-smi">bp</span>+j)+i);</td>
       </tr>
       <tr>
         <td id="L139" class="blob-num js-line-number" data-line-number="139"></td>
-        <td id="LC139" class="blob-code blob-code-inner js-file-line">		*p=p-a;</td>
+        <td id="LC139" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
       </tr>
       <tr>
         <td id="L140" class="blob-num js-line-number" data-line-number="140"></td>
-        <td id="LC140" class="blob-code blob-code-inner js-file-line">	arr[<span class="pl-c1">0</span>]=-<span class="pl-c1">1</span>;</td>
+        <td id="LC140" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L141" class="blob-num js-line-number" data-line-number="141"></td>
-        <td id="LC141" class="blob-code blob-code-inner js-file-line">	a[order]=-<span class="pl-c1">1</span>;</td>
+        <td id="LC141" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L142" class="blob-num js-line-number" data-line-number="142"></td>
-        <td id="LC142" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> <span class="pl-smi">NextOrdinal</span>()</td>
+        <td id="LC142" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">CofactorMatrix</span>(MATRIX* mat, <span class="pl-k">int</span> row, <span class="pl-k">int</span> col, MATRIX* rmat)</td>
       </tr>
       <tr>
         <td id="L143" class="blob-num js-line-number" data-line-number="143"></td>
-        <td id="LC143" class="blob-code blob-code-inner js-file-line">	{</td>
+        <td id="LC143" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L144" class="blob-num js-line-number" data-line-number="144"></td>
-        <td id="LC144" class="blob-code blob-code-inner js-file-line">		p=t;</td>
+        <td id="LC144" class="blob-code blob-code-inner js-file-line">	row--, col--;</td>
       </tr>
       <tr>
         <td id="L145" class="blob-num js-line-number" data-line-number="145"></td>
-        <td id="LC145" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(*p&lt;*--p);</td>
+        <td id="LC145" class="blob-code blob-code-inner js-file-line">	MATRIX* m;</td>
       </tr>
       <tr>
         <td id="L146" class="blob-num js-line-number" data-line-number="146"></td>
-        <td id="LC146" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(p&lt;a)</td>
+        <td id="LC146" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!rmat){</td>
       </tr>
       <tr>
         <td id="L147" class="blob-num js-line-number" data-line-number="147"></td>
-        <td id="LC147" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">return</span> -<span class="pl-c1">1</span>;</td>
+        <td id="LC147" class="blob-code blob-code-inner js-file-line">		m=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
       </tr>
       <tr>
         <td id="L148" class="blob-num js-line-number" data-line-number="148"></td>
-        <td id="LC148" class="blob-code blob-code-inner js-file-line">		q=p;</td>
+        <td id="LC148" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>( !m || <span class="pl-c1">InitMatrix</span>(m, mat-&gt;<span class="pl-smi">row</span>-<span class="pl-c1">1</span>, mat-&gt;<span class="pl-smi">col</span>-<span class="pl-c1">1</span>) )</td>
       </tr>
       <tr>
         <td id="L149" class="blob-num js-line-number" data-line-number="149"></td>
-        <td id="LC149" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(*++q&gt;*p);</td>
+        <td id="LC149" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
       </tr>
       <tr>
         <td id="L150" class="blob-num js-line-number" data-line-number="150"></td>
-        <td id="LC150" class="blob-code blob-code-inner js-file-line">		i=*--q, *q=*p, *p=i;</td>
+        <td id="LC150" class="blob-code blob-code-inner js-file-line">	}</td>
       </tr>
       <tr>
         <td id="L151" class="blob-num js-line-number" data-line-number="151"></td>
-        <td id="LC151" class="blob-code blob-code-inner js-file-line">		p++, q=t;</td>
+        <td id="LC151" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">else</span></td>
       </tr>
       <tr>
         <td id="L152" class="blob-num js-line-number" data-line-number="152"></td>
-        <td id="LC152" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">while</span>(p&lt;q)</td>
+        <td id="LC152" class="blob-code blob-code-inner js-file-line">		m=rmat;</td>
       </tr>
       <tr>
         <td id="L153" class="blob-num js-line-number" data-line-number="153"></td>
-        <td id="LC153" class="blob-code blob-code-inner js-file-line">			i=*p, *p++=*q, *q--=i;</td>
+        <td id="LC153" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j, r=<span class="pl-c1">0</span>, c=<span class="pl-c1">0</span>;</td>
       </tr>
       <tr>
         <td id="L154" class="blob-num js-line-number" data-line-number="154"></td>
-        <td id="LC154" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+        <td id="LC154" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;mat-&gt;<span class="pl-smi">row</span>;i++){</td>
       </tr>
       <tr>
         <td id="L155" class="blob-num js-line-number" data-line-number="155"></td>
-        <td id="LC155" class="blob-code blob-code-inner js-file-line">	}</td>
+        <td id="LC155" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(i==row){</td>
       </tr>
       <tr>
         <td id="L156" class="blob-num js-line-number" data-line-number="156"></td>
-        <td id="LC156" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">do</span>{</td>
+        <td id="LC156" class="blob-code blob-code-inner js-file-line">			r=<span class="pl-c1">1</span>;</td>
       </tr>
       <tr>
         <td id="L157" class="blob-num js-line-number" data-line-number="157"></td>
-        <td id="LC157" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(p=a,product=<span class="pl-c1">1</span>,i=<span class="pl-c1">0</span>; p&lt;=t; p++,i++)</td>
+        <td id="LC157" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">continue</span>;</td>
       </tr>
       <tr>
         <td id="L158" class="blob-num js-line-number" data-line-number="158"></td>
-        <td id="LC158" class="blob-code blob-code-inner js-file-line">			product*=*(*(bp+i)+*p);</td>
+        <td id="LC158" class="blob-code blob-code-inner js-file-line">		}</td>
       </tr>
       <tr>
         <td id="L159" class="blob-num js-line-number" data-line-number="159"></td>
-        <td id="LC159" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(<span class="pl-c1">InverseNum</span>(a, order)%<span class="pl-c1">2</span>==<span class="pl-c1">0</span>)</td>
+        <td id="LC159" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>,c=<span class="pl-c1">0</span>;j&lt;mat-&gt;<span class="pl-smi">col</span>;j++){</td>
       </tr>
       <tr>
         <td id="L160" class="blob-num js-line-number" data-line-number="160"></td>
-        <td id="LC160" class="blob-code blob-code-inner js-file-line">			det+=product;</td>
+        <td id="LC160" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">if</span>(j==col){</td>
       </tr>
       <tr>
         <td id="L161" class="blob-num js-line-number" data-line-number="161"></td>
-        <td id="LC161" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">else</span></td>
+        <td id="LC161" class="blob-code blob-code-inner js-file-line">				c=<span class="pl-c1">1</span>;</td>
       </tr>
       <tr>
         <td id="L162" class="blob-num js-line-number" data-line-number="162"></td>
-        <td id="LC162" class="blob-code blob-code-inner js-file-line">			det-=product;</td>
+        <td id="LC162" class="blob-code blob-code-inner js-file-line">				<span class="pl-k">continue</span>;</td>
       </tr>
       <tr>
         <td id="L163" class="blob-num js-line-number" data-line-number="163"></td>
-        <td id="LC163" class="blob-code blob-code-inner js-file-line">	}<span class="pl-k">while</span>(<span class="pl-c1">NextOrdinal</span>()&gt;=<span class="pl-c1">0</span>);</td>
+        <td id="LC163" class="blob-code blob-code-inner js-file-line">			}</td>
       </tr>
       <tr>
         <td id="L164" class="blob-num js-line-number" data-line-number="164"></td>
-        <td id="LC164" class="blob-code blob-code-inner js-file-line">	__MATRIX__=<span class="pl-c1">0</span>;</td>
+        <td id="LC164" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i-r)+j-c)=*(*(mat-&gt;<span class="pl-smi">bp</span>+i)+j);</td>
       </tr>
       <tr>
         <td id="L165" class="blob-num js-line-number" data-line-number="165"></td>
-        <td id="LC165" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> det;</td>
+        <td id="LC165" class="blob-code blob-code-inner js-file-line">		}</td>
       </tr>
       <tr>
         <td id="L166" class="blob-num js-line-number" data-line-number="166"></td>
-        <td id="LC166" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC166" class="blob-code blob-code-inner js-file-line">	}</td>
       </tr>
       <tr>
         <td id="L167" class="blob-num js-line-number" data-line-number="167"></td>
-        <td id="LC167" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">endif</span></td>
+        <td id="LC167" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
       </tr>
       <tr>
         <td id="L168" class="blob-num js-line-number" data-line-number="168"></td>
-        <td id="LC168" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC168" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L169" class="blob-num js-line-number" data-line-number="169"></td>
-        <td id="LC169" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">TransposeMatrix</span>(MATRIX* mat, MATRIX* rmat)</td>
+        <td id="LC169" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L170" class="blob-num js-line-number" data-line-number="170"></td>
-        <td id="LC170" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC170" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">CloneMatrix</span>(MATRIX* mat)</td>
       </tr>
       <tr>
         <td id="L171" class="blob-num js-line-number" data-line-number="171"></td>
-        <td id="LC171" class="blob-code blob-code-inner js-file-line">	MATRIX* m;</td>
+        <td id="LC171" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L172" class="blob-num js-line-number" data-line-number="172"></td>
-        <td id="LC172" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!rmat){</td>
+        <td id="LC172" class="blob-code blob-code-inner js-file-line">	MATRIX* m=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
       </tr>
       <tr>
         <td id="L173" class="blob-num js-line-number" data-line-number="173"></td>
-        <td id="LC173" class="blob-code blob-code-inner js-file-line">		m=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
+        <td id="LC173" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>( !m || <span class="pl-c1">InitMatrix</span>(m, mat-&gt;<span class="pl-smi">row</span>, mat-&gt;<span class="pl-smi">col</span>) )</td>
       </tr>
       <tr>
         <td id="L174" class="blob-num js-line-number" data-line-number="174"></td>
-        <td id="LC174" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>( !m || <span class="pl-c1">InitMatrix</span>(m, mat-&gt;<span class="pl-smi">col</span>, mat-&gt;<span class="pl-smi">row</span>) )</td>
+        <td id="LC174" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
       </tr>
       <tr>
         <td id="L175" class="blob-num js-line-number" data-line-number="175"></td>
-        <td id="LC175" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
+        <td id="LC175" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
       </tr>
       <tr>
         <td id="L176" class="blob-num js-line-number" data-line-number="176"></td>
-        <td id="LC176" class="blob-code blob-code-inner js-file-line">	}</td>
+        <td id="LC176" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m-&gt;<span class="pl-smi">row</span>;i++)</td>
       </tr>
       <tr>
         <td id="L177" class="blob-num js-line-number" data-line-number="177"></td>
-        <td id="LC177" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">else</span></td>
+        <td id="LC177" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m-&gt;<span class="pl-smi">col</span>;j++)</td>
       </tr>
       <tr>
         <td id="L178" class="blob-num js-line-number" data-line-number="178"></td>
-        <td id="LC178" class="blob-code blob-code-inner js-file-line">		m=rmat;</td>
+        <td id="LC178" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i)+j)=*(*(mat-&gt;<span class="pl-smi">bp</span>+i)+j);</td>
       </tr>
       <tr>
         <td id="L179" class="blob-num js-line-number" data-line-number="179"></td>
-        <td id="LC179" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
+        <td id="LC179" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
       </tr>
       <tr>
         <td id="L180" class="blob-num js-line-number" data-line-number="180"></td>
-        <td id="LC180" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m-&gt;<span class="pl-smi">row</span>;i++)</td>
+        <td id="LC180" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L181" class="blob-num js-line-number" data-line-number="181"></td>
-        <td id="LC181" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m-&gt;<span class="pl-smi">col</span>;j++)</td>
+        <td id="LC181" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L182" class="blob-num js-line-number" data-line-number="182"></td>
-        <td id="LC182" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i)+j)=*(*(mat-&gt;<span class="pl-smi">bp</span>+j)+i);</td>
+        <td id="LC182" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">MatrixAdd</span>(MATRIX* m1, MATRIX* m2)</td>
       </tr>
       <tr>
         <td id="L183" class="blob-num js-line-number" data-line-number="183"></td>
-        <td id="LC183" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
+        <td id="LC183" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L184" class="blob-num js-line-number" data-line-number="184"></td>
-        <td id="LC184" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC184" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
       </tr>
       <tr>
         <td id="L185" class="blob-num js-line-number" data-line-number="185"></td>
-        <td id="LC185" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC185" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m1-&gt;<span class="pl-smi">row</span>;i++)</td>
       </tr>
       <tr>
         <td id="L186" class="blob-num js-line-number" data-line-number="186"></td>
-        <td id="LC186" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">CofactorMatrix</span>(MATRIX* mat, <span class="pl-k">int</span> row, <span class="pl-k">int</span> col, MATRIX* rmat)</td>
+        <td id="LC186" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m1-&gt;<span class="pl-smi">col</span>;j++)</td>
       </tr>
       <tr>
         <td id="L187" class="blob-num js-line-number" data-line-number="187"></td>
-        <td id="LC187" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC187" class="blob-code blob-code-inner js-file-line">			*(*(m1-&gt;<span class="pl-smi">bp</span>+i)+j)+=*(*(m2-&gt;<span class="pl-smi">bp</span>+i)+j);</td>
       </tr>
       <tr>
         <td id="L188" class="blob-num js-line-number" data-line-number="188"></td>
-        <td id="LC188" class="blob-code blob-code-inner js-file-line">	row--, col--;</td>
+        <td id="LC188" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L189" class="blob-num js-line-number" data-line-number="189"></td>
-        <td id="LC189" class="blob-code blob-code-inner js-file-line">	MATRIX* m;</td>
-      </tr>
-      <tr>
-        <td id="L190" class="blob-num js-line-number" data-line-number="190"></td>
-        <td id="LC190" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!rmat){</td>
-      </tr>
-      <tr>
-        <td id="L191" class="blob-num js-line-number" data-line-number="191"></td>
-        <td id="LC191" class="blob-code blob-code-inner js-file-line">		m=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
-      </tr>
-      <tr>
-        <td id="L192" class="blob-num js-line-number" data-line-number="192"></td>
-        <td id="LC192" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>( !m || <span class="pl-c1">InitMatrix</span>(m, mat-&gt;<span class="pl-smi">row</span>-<span class="pl-c1">1</span>, mat-&gt;<span class="pl-smi">col</span>-<span class="pl-c1">1</span>) )</td>
-      </tr>
-      <tr>
-        <td id="L193" class="blob-num js-line-number" data-line-number="193"></td>
-        <td id="LC193" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
-      </tr>
-      <tr>
-        <td id="L194" class="blob-num js-line-number" data-line-number="194"></td>
-        <td id="LC194" class="blob-code blob-code-inner js-file-line">	}</td>
-      </tr>
-      <tr>
-        <td id="L195" class="blob-num js-line-number" data-line-number="195"></td>
-        <td id="LC195" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">else</span></td>
-      </tr>
-      <tr>
-        <td id="L196" class="blob-num js-line-number" data-line-number="196"></td>
-        <td id="LC196" class="blob-code blob-code-inner js-file-line">		m=rmat;</td>
-      </tr>
-      <tr>
-        <td id="L197" class="blob-num js-line-number" data-line-number="197"></td>
-        <td id="LC197" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j, r=<span class="pl-c1">0</span>, c=<span class="pl-c1">0</span>;</td>
-      </tr>
-      <tr>
-        <td id="L198" class="blob-num js-line-number" data-line-number="198"></td>
-        <td id="LC198" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;mat-&gt;<span class="pl-smi">row</span>;i++){</td>
-      </tr>
-      <tr>
-        <td id="L199" class="blob-num js-line-number" data-line-number="199"></td>
-        <td id="LC199" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">if</span>(i==row){</td>
-      </tr>
-      <tr>
-        <td id="L200" class="blob-num js-line-number" data-line-number="200"></td>
-        <td id="LC200" class="blob-code blob-code-inner js-file-line">			r=<span class="pl-c1">1</span>;</td>
-      </tr>
-      <tr>
-        <td id="L201" class="blob-num js-line-number" data-line-number="201"></td>
-        <td id="LC201" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">continue</span>;</td>
-      </tr>
-      <tr>
-        <td id="L202" class="blob-num js-line-number" data-line-number="202"></td>
-        <td id="LC202" class="blob-code blob-code-inner js-file-line">		}</td>
-      </tr>
-      <tr>
-        <td id="L203" class="blob-num js-line-number" data-line-number="203"></td>
-        <td id="LC203" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>,c=<span class="pl-c1">0</span>;j&lt;mat-&gt;<span class="pl-smi">col</span>;j++){</td>
-      </tr>
-      <tr>
-        <td id="L204" class="blob-num js-line-number" data-line-number="204"></td>
-        <td id="LC204" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">if</span>(j==col){</td>
-      </tr>
-      <tr>
-        <td id="L205" class="blob-num js-line-number" data-line-number="205"></td>
-        <td id="LC205" class="blob-code blob-code-inner js-file-line">				c=<span class="pl-c1">1</span>;</td>
-      </tr>
-      <tr>
-        <td id="L206" class="blob-num js-line-number" data-line-number="206"></td>
-        <td id="LC206" class="blob-code blob-code-inner js-file-line">				<span class="pl-k">continue</span>;</td>
-      </tr>
-      <tr>
-        <td id="L207" class="blob-num js-line-number" data-line-number="207"></td>
-        <td id="LC207" class="blob-code blob-code-inner js-file-line">			}</td>
-      </tr>
-      <tr>
-        <td id="L208" class="blob-num js-line-number" data-line-number="208"></td>
-        <td id="LC208" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i-r)+j-c)=*(*(mat-&gt;<span class="pl-smi">bp</span>+i)+j);</td>
-      </tr>
-      <tr>
-        <td id="L209" class="blob-num js-line-number" data-line-number="209"></td>
-        <td id="LC209" class="blob-code blob-code-inner js-file-line">		}</td>
-      </tr>
-      <tr>
-        <td id="L210" class="blob-num js-line-number" data-line-number="210"></td>
-        <td id="LC210" class="blob-code blob-code-inner js-file-line">	}</td>
-      </tr>
-      <tr>
-        <td id="L211" class="blob-num js-line-number" data-line-number="211"></td>
-        <td id="LC211" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
-      </tr>
-      <tr>
-        <td id="L212" class="blob-num js-line-number" data-line-number="212"></td>
-        <td id="LC212" class="blob-code blob-code-inner js-file-line">}</td>
-      </tr>
-      <tr>
-        <td id="L213" class="blob-num js-line-number" data-line-number="213"></td>
-        <td id="LC213" class="blob-code blob-code-inner js-file-line">
+        <td id="LC189" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
       <tr>
+        <td id="L190" class="blob-num js-line-number" data-line-number="190"></td>
+        <td id="LC190" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">MatrixSub</span>(MATRIX* m1, MATRIX* m2)</td>
+      </tr>
+      <tr>
+        <td id="L191" class="blob-num js-line-number" data-line-number="191"></td>
+        <td id="LC191" class="blob-code blob-code-inner js-file-line">{</td>
+      </tr>
+      <tr>
+        <td id="L192" class="blob-num js-line-number" data-line-number="192"></td>
+        <td id="LC192" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
+      </tr>
+      <tr>
+        <td id="L193" class="blob-num js-line-number" data-line-number="193"></td>
+        <td id="LC193" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m1-&gt;<span class="pl-smi">row</span>;i++)</td>
+      </tr>
+      <tr>
+        <td id="L194" class="blob-num js-line-number" data-line-number="194"></td>
+        <td id="LC194" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m1-&gt;<span class="pl-smi">col</span>;j++)</td>
+      </tr>
+      <tr>
+        <td id="L195" class="blob-num js-line-number" data-line-number="195"></td>
+        <td id="LC195" class="blob-code blob-code-inner js-file-line">			*(*(m1-&gt;<span class="pl-smi">bp</span>+i)+j)-=*(*(m2-&gt;<span class="pl-smi">bp</span>+i)+j);</td>
+      </tr>
+      <tr>
+        <td id="L196" class="blob-num js-line-number" data-line-number="196"></td>
+        <td id="LC196" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="L197" class="blob-num js-line-number" data-line-number="197"></td>
+        <td id="LC197" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L198" class="blob-num js-line-number" data-line-number="198"></td>
+        <td id="LC198" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">MatrixMul</span>(MATRIX* m1, MATRIX* m2)</td>
+      </tr>
+      <tr>
+        <td id="L199" class="blob-num js-line-number" data-line-number="199"></td>
+        <td id="LC199" class="blob-code blob-code-inner js-file-line">{</td>
+      </tr>
+      <tr>
+        <td id="L200" class="blob-num js-line-number" data-line-number="200"></td>
+        <td id="LC200" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(m1-&gt;<span class="pl-smi">col</span>!=m2-&gt;<span class="pl-smi">row</span>)</td>
+      </tr>
+      <tr>
+        <td id="L201" class="blob-num js-line-number" data-line-number="201"></td>
+        <td id="LC201" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
+      </tr>
+      <tr>
+        <td id="L202" class="blob-num js-line-number" data-line-number="202"></td>
+        <td id="LC202" class="blob-code blob-code-inner js-file-line">	MATRIX* m=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
+      </tr>
+      <tr>
+        <td id="L203" class="blob-num js-line-number" data-line-number="203"></td>
+        <td id="LC203" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>( !m || <span class="pl-c1">InitMatrix</span>(m, m1-&gt;<span class="pl-smi">row</span>, m2-&gt;<span class="pl-smi">col</span>) )</td>
+      </tr>
+      <tr>
+        <td id="L204" class="blob-num js-line-number" data-line-number="204"></td>
+        <td id="LC204" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
+      </tr>
+      <tr>
+        <td id="L205" class="blob-num js-line-number" data-line-number="205"></td>
+        <td id="LC205" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j, k;</td>
+      </tr>
+      <tr>
+        <td id="L206" class="blob-num js-line-number" data-line-number="206"></td>
+        <td id="LC206" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> product;</td>
+      </tr>
+      <tr>
+        <td id="L207" class="blob-num js-line-number" data-line-number="207"></td>
+        <td id="LC207" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m-&gt;<span class="pl-smi">row</span>;i++)</td>
+      </tr>
+      <tr>
+        <td id="L208" class="blob-num js-line-number" data-line-number="208"></td>
+        <td id="LC208" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m-&gt;<span class="pl-smi">col</span>;j++){</td>
+      </tr>
+      <tr>
+        <td id="L209" class="blob-num js-line-number" data-line-number="209"></td>
+        <td id="LC209" class="blob-code blob-code-inner js-file-line">			product=<span class="pl-c1">0</span>;</td>
+      </tr>
+      <tr>
+        <td id="L210" class="blob-num js-line-number" data-line-number="210"></td>
+        <td id="LC210" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">for</span>(k=<span class="pl-c1">0</span>;k&lt;m1-&gt;<span class="pl-smi">col</span>;k++)</td>
+      </tr>
+      <tr>
+        <td id="L211" class="blob-num js-line-number" data-line-number="211"></td>
+        <td id="LC211" class="blob-code blob-code-inner js-file-line">				product+=*(*(m1-&gt;<span class="pl-smi">bp</span>+i)+k)**(*(m2-&gt;<span class="pl-smi">bp</span>+k)+j);</td>
+      </tr>
+      <tr>
+        <td id="L212" class="blob-num js-line-number" data-line-number="212"></td>
+        <td id="LC212" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i)+j)=product;</td>
+      </tr>
+      <tr>
+        <td id="L213" class="blob-num js-line-number" data-line-number="213"></td>
+        <td id="LC213" class="blob-code blob-code-inner js-file-line">		}</td>
+      </tr>
+      <tr>
         <td id="L214" class="blob-num js-line-number" data-line-number="214"></td>
-        <td id="LC214" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">CloneMatrix</span>(MATRIX* mat)</td>
+        <td id="LC214" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
       </tr>
       <tr>
         <td id="L215" class="blob-num js-line-number" data-line-number="215"></td>
-        <td id="LC215" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC215" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L216" class="blob-num js-line-number" data-line-number="216"></td>
-        <td id="LC216" class="blob-code blob-code-inner js-file-line">	MATRIX* m=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
+        <td id="LC216" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L217" class="blob-num js-line-number" data-line-number="217"></td>
-        <td id="LC217" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>( !m || <span class="pl-c1">InitMatrix</span>(m, mat-&gt;<span class="pl-smi">row</span>, mat-&gt;<span class="pl-smi">col</span>) )</td>
+        <td id="LC217" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">AdjointMatrix</span>(MATRIX* mat)</td>
       </tr>
       <tr>
         <td id="L218" class="blob-num js-line-number" data-line-number="218"></td>
-        <td id="LC218" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
+        <td id="LC218" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L219" class="blob-num js-line-number" data-line-number="219"></td>
@@ -965,450 +967,210 @@
       </tr>
       <tr>
         <td id="L220" class="blob-num js-line-number" data-line-number="220"></td>
-        <td id="LC220" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m-&gt;<span class="pl-smi">row</span>;i++)</td>
+        <td id="LC220" class="blob-code blob-code-inner js-file-line">	MATRIX *adm, *acm;</td>
       </tr>
       <tr>
         <td id="L221" class="blob-num js-line-number" data-line-number="221"></td>
-        <td id="LC221" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m-&gt;<span class="pl-smi">col</span>;j++)</td>
+        <td id="LC221" class="blob-code blob-code-inner js-file-line">	adm=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
       </tr>
       <tr>
         <td id="L222" class="blob-num js-line-number" data-line-number="222"></td>
-        <td id="LC222" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i)+j)=*(*(mat-&gt;<span class="pl-smi">bp</span>+i)+j);</td>
+        <td id="LC222" class="blob-code blob-code-inner js-file-line">	acm=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
       </tr>
       <tr>
         <td id="L223" class="blob-num js-line-number" data-line-number="223"></td>
-        <td id="LC223" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
+        <td id="LC223" class="blob-code blob-code-inner js-file-line">	i=<span class="pl-c1">InitMatrix</span>(adm, mat-&gt;<span class="pl-smi">row</span>, mat-&gt;<span class="pl-smi">col</span>);</td>
       </tr>
       <tr>
         <td id="L224" class="blob-num js-line-number" data-line-number="224"></td>
-        <td id="LC224" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC224" class="blob-code blob-code-inner js-file-line">	j=<span class="pl-c1">InitMatrix</span>(acm, mat-&gt;<span class="pl-smi">row</span>-<span class="pl-c1">1</span>, mat-&gt;<span class="pl-smi">col</span>-<span class="pl-c1">1</span>);</td>
       </tr>
       <tr>
         <td id="L225" class="blob-num js-line-number" data-line-number="225"></td>
-        <td id="LC225" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC225" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!adm||!acm || i||j)</td>
       </tr>
       <tr>
         <td id="L226" class="blob-num js-line-number" data-line-number="226"></td>
-        <td id="LC226" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">MatrixAdd</span>(MATRIX* m1, MATRIX* m2)</td>
+        <td id="LC226" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
       </tr>
       <tr>
         <td id="L227" class="blob-num js-line-number" data-line-number="227"></td>
-        <td id="LC227" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC227" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;adm-&gt;<span class="pl-smi">row</span>;i++)</td>
       </tr>
       <tr>
         <td id="L228" class="blob-num js-line-number" data-line-number="228"></td>
-        <td id="LC228" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
+        <td id="LC228" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;adm-&gt;<span class="pl-smi">col</span>;j++)</td>
       </tr>
       <tr>
         <td id="L229" class="blob-num js-line-number" data-line-number="229"></td>
-        <td id="LC229" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m1-&gt;<span class="pl-smi">row</span>;i++)</td>
+        <td id="LC229" class="blob-code blob-code-inner js-file-line">			*(*(adm-&gt;<span class="pl-smi">bp</span>+i)+j)=( ((i+j)%<span class="pl-c1">2</span>==<span class="pl-c1">0</span>) ? <span class="pl-c1">1</span> : -<span class="pl-c1">1</span> )*<span class="pl-c1">DetValue</span>(<span class="pl-c1">CofactorMatrix</span>(mat, j+<span class="pl-c1">1</span>, i+<span class="pl-c1">1</span>, acm));</td>
       </tr>
       <tr>
         <td id="L230" class="blob-num js-line-number" data-line-number="230"></td>
-        <td id="LC230" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m1-&gt;<span class="pl-smi">col</span>;j++)</td>
+        <td id="LC230" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">DestroyMatrix</span>(acm);</td>
       </tr>
       <tr>
         <td id="L231" class="blob-num js-line-number" data-line-number="231"></td>
-        <td id="LC231" class="blob-code blob-code-inner js-file-line">			*(*(m1-&gt;<span class="pl-smi">bp</span>+i)+j)+=*(*(m2-&gt;<span class="pl-smi">bp</span>+i)+j);</td>
+        <td id="LC231" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">free</span>(acm);</td>
       </tr>
       <tr>
         <td id="L232" class="blob-num js-line-number" data-line-number="232"></td>
-        <td id="LC232" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC232" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> adm;</td>
       </tr>
       <tr>
         <td id="L233" class="blob-num js-line-number" data-line-number="233"></td>
-        <td id="LC233" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC233" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L234" class="blob-num js-line-number" data-line-number="234"></td>
-        <td id="LC234" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">MatrixSub</span>(MATRIX* m1, MATRIX* m2)</td>
+        <td id="LC234" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L235" class="blob-num js-line-number" data-line-number="235"></td>
-        <td id="LC235" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC235" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">InverseMatrix</span>(MATRIX* mat)</td>
       </tr>
       <tr>
         <td id="L236" class="blob-num js-line-number" data-line-number="236"></td>
-        <td id="LC236" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
+        <td id="LC236" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L237" class="blob-num js-line-number" data-line-number="237"></td>
-        <td id="LC237" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m1-&gt;<span class="pl-smi">row</span>;i++)</td>
+        <td id="LC237" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> det;</td>
       </tr>
       <tr>
         <td id="L238" class="blob-num js-line-number" data-line-number="238"></td>
-        <td id="LC238" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m1-&gt;<span class="pl-smi">col</span>;j++)</td>
+        <td id="LC238" class="blob-code blob-code-inner js-file-line">	MATRIX* m;</td>
       </tr>
       <tr>
         <td id="L239" class="blob-num js-line-number" data-line-number="239"></td>
-        <td id="LC239" class="blob-code blob-code-inner js-file-line">			*(*(m1-&gt;<span class="pl-smi">bp</span>+i)+j)-=*(*(m2-&gt;<span class="pl-smi">bp</span>+i)+j);</td>
+        <td id="LC239" class="blob-code blob-code-inner js-file-line">	det=<span class="pl-c1">DetValue</span>(mat);</td>
       </tr>
       <tr>
         <td id="L240" class="blob-num js-line-number" data-line-number="240"></td>
-        <td id="LC240" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC240" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(det==<span class="pl-c1">0</span>)</td>
       </tr>
       <tr>
         <td id="L241" class="blob-num js-line-number" data-line-number="241"></td>
-        <td id="LC241" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC241" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
       </tr>
       <tr>
         <td id="L242" class="blob-num js-line-number" data-line-number="242"></td>
-        <td id="LC242" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">MatrixMul</span>(MATRIX* m1, MATRIX* m2)</td>
+        <td id="LC242" class="blob-code blob-code-inner js-file-line">	m=<span class="pl-c1">AdjointMatrix</span>(mat);</td>
       </tr>
       <tr>
         <td id="L243" class="blob-num js-line-number" data-line-number="243"></td>
-        <td id="LC243" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC243" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!m)</td>
       </tr>
       <tr>
         <td id="L244" class="blob-num js-line-number" data-line-number="244"></td>
-        <td id="LC244" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(m1-&gt;<span class="pl-smi">col</span>!=m2-&gt;<span class="pl-smi">row</span>)</td>
+        <td id="LC244" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
       </tr>
       <tr>
         <td id="L245" class="blob-num js-line-number" data-line-number="245"></td>
-        <td id="LC245" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
+        <td id="LC245" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
       </tr>
       <tr>
         <td id="L246" class="blob-num js-line-number" data-line-number="246"></td>
-        <td id="LC246" class="blob-code blob-code-inner js-file-line">	MATRIX* m=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
+        <td id="LC246" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m-&gt;<span class="pl-smi">row</span>;i++)</td>
       </tr>
       <tr>
         <td id="L247" class="blob-num js-line-number" data-line-number="247"></td>
-        <td id="LC247" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>( !m || <span class="pl-c1">InitMatrix</span>(m, m1-&gt;<span class="pl-smi">row</span>, m2-&gt;<span class="pl-smi">col</span>) )</td>
+        <td id="LC247" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m-&gt;<span class="pl-smi">col</span>;j++)</td>
       </tr>
       <tr>
         <td id="L248" class="blob-num js-line-number" data-line-number="248"></td>
-        <td id="LC248" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
+        <td id="LC248" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i)+j)/=det;</td>
       </tr>
       <tr>
         <td id="L249" class="blob-num js-line-number" data-line-number="249"></td>
-        <td id="LC249" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j, k;</td>
+        <td id="LC249" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
       </tr>
       <tr>
         <td id="L250" class="blob-num js-line-number" data-line-number="250"></td>
-        <td id="LC250" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> product;</td>
+        <td id="LC250" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L251" class="blob-num js-line-number" data-line-number="251"></td>
-        <td id="LC251" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m-&gt;<span class="pl-smi">row</span>;i++)</td>
+        <td id="LC251" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L252" class="blob-num js-line-number" data-line-number="252"></td>
-        <td id="LC252" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m-&gt;<span class="pl-smi">col</span>;j++){</td>
+        <td id="LC252" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">PrintMatrixS</span>(MATRIX* mat)</td>
       </tr>
       <tr>
         <td id="L253" class="blob-num js-line-number" data-line-number="253"></td>
-        <td id="LC253" class="blob-code blob-code-inner js-file-line">			product=<span class="pl-c1">0</span>;</td>
+        <td id="LC253" class="blob-code blob-code-inner js-file-line">{</td>
       </tr>
       <tr>
         <td id="L254" class="blob-num js-line-number" data-line-number="254"></td>
-        <td id="LC254" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">for</span>(k=<span class="pl-c1">0</span>;k&lt;m1-&gt;<span class="pl-smi">col</span>;k++)</td>
+        <td id="LC254" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">char</span> c;</td>
       </tr>
       <tr>
         <td id="L255" class="blob-num js-line-number" data-line-number="255"></td>
-        <td id="LC255" class="blob-code blob-code-inner js-file-line">				product+=*(*(m1-&gt;<span class="pl-smi">bp</span>+i)+k)**(*(m2-&gt;<span class="pl-smi">bp</span>+k)+j);</td>
+        <td id="LC255" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j, row, col;</td>
       </tr>
       <tr>
         <td id="L256" class="blob-num js-line-number" data-line-number="256"></td>
-        <td id="LC256" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i)+j)=product;</td>
+        <td id="LC256" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> **bp, *p, d;</td>
       </tr>
       <tr>
         <td id="L257" class="blob-num js-line-number" data-line-number="257"></td>
-        <td id="LC257" class="blob-code blob-code-inner js-file-line">		}</td>
+        <td id="LC257" class="blob-code blob-code-inner js-file-line">	bp=mat-&gt;<span class="pl-smi">bp</span>;</td>
       </tr>
       <tr>
         <td id="L258" class="blob-num js-line-number" data-line-number="258"></td>
-        <td id="LC258" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
+        <td id="LC258" class="blob-code blob-code-inner js-file-line">	row=mat-&gt;<span class="pl-smi">row</span>;</td>
       </tr>
       <tr>
         <td id="L259" class="blob-num js-line-number" data-line-number="259"></td>
-        <td id="LC259" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC259" class="blob-code blob-code-inner js-file-line">	col=mat-&gt;<span class="pl-smi">col</span>;</td>
       </tr>
       <tr>
         <td id="L260" class="blob-num js-line-number" data-line-number="260"></td>
-        <td id="LC260" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC260" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;row;i++){</td>
       </tr>
       <tr>
         <td id="L261" class="blob-num js-line-number" data-line-number="261"></td>
-        <td id="LC261" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">AdjointMatrix</span>(MATRIX* mat)</td>
+        <td id="LC261" class="blob-code blob-code-inner js-file-line">		p=*(bp+i);</td>
       </tr>
       <tr>
         <td id="L262" class="blob-num js-line-number" data-line-number="262"></td>
-        <td id="LC262" class="blob-code blob-code-inner js-file-line">{</td>
+        <td id="LC262" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;col;j++){</td>
       </tr>
       <tr>
         <td id="L263" class="blob-num js-line-number" data-line-number="263"></td>
-        <td id="LC263" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
+        <td id="LC263" class="blob-code blob-code-inner js-file-line">			*(p+j)&lt;<span class="pl-c1">0</span> ? (c=<span class="pl-s"><span class="pl-pds">&#39;</span>-<span class="pl-pds">&#39;</span></span>, d=-*(p+j)) : (c=<span class="pl-s"><span class="pl-pds">&#39;</span> <span class="pl-pds">&#39;</span></span>, d=*(p+j)) ;</td>
       </tr>
       <tr>
         <td id="L264" class="blob-num js-line-number" data-line-number="264"></td>
-        <td id="LC264" class="blob-code blob-code-inner js-file-line">	MATRIX *adm, *acm;</td>
+        <td id="LC264" class="blob-code blob-code-inner js-file-line">			<span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-c1">%c%-6.6G</span> <span class="pl-pds">&quot;</span></span>, c, d);</td>
       </tr>
       <tr>
         <td id="L265" class="blob-num js-line-number" data-line-number="265"></td>
-        <td id="LC265" class="blob-code blob-code-inner js-file-line">	adm=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
+        <td id="LC265" class="blob-code blob-code-inner js-file-line">		}</td>
       </tr>
       <tr>
         <td id="L266" class="blob-num js-line-number" data-line-number="266"></td>
-        <td id="LC266" class="blob-code blob-code-inner js-file-line">	acm=(MATRIX*)<span class="pl-c1">malloc</span>(<span class="pl-k">sizeof</span>(MATRIX));</td>
+        <td id="LC266" class="blob-code blob-code-inner js-file-line">		<span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L267" class="blob-num js-line-number" data-line-number="267"></td>
-        <td id="LC267" class="blob-code blob-code-inner js-file-line">	i=<span class="pl-c1">InitMatrix</span>(adm, mat-&gt;<span class="pl-smi">row</span>, mat-&gt;<span class="pl-smi">col</span>);</td>
+        <td id="LC267" class="blob-code blob-code-inner js-file-line">	}</td>
       </tr>
       <tr>
         <td id="L268" class="blob-num js-line-number" data-line-number="268"></td>
-        <td id="LC268" class="blob-code blob-code-inner js-file-line">	j=<span class="pl-c1">InitMatrix</span>(acm, mat-&gt;<span class="pl-smi">row</span>-<span class="pl-c1">1</span>, mat-&gt;<span class="pl-smi">col</span>-<span class="pl-c1">1</span>);</td>
+        <td id="LC268" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
       <tr>
         <td id="L269" class="blob-num js-line-number" data-line-number="269"></td>
-        <td id="LC269" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!adm||!acm || i||j)</td>
+        <td id="LC269" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L270" class="blob-num js-line-number" data-line-number="270"></td>
-        <td id="LC270" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
-      </tr>
-      <tr>
-        <td id="L271" class="blob-num js-line-number" data-line-number="271"></td>
-        <td id="LC271" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;adm-&gt;<span class="pl-smi">row</span>;i++)</td>
-      </tr>
-      <tr>
-        <td id="L272" class="blob-num js-line-number" data-line-number="272"></td>
-        <td id="LC272" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;adm-&gt;<span class="pl-smi">col</span>;j++)</td>
-      </tr>
-      <tr>
-        <td id="L273" class="blob-num js-line-number" data-line-number="273"></td>
-        <td id="LC273" class="blob-code blob-code-inner js-file-line">			*(*(adm-&gt;<span class="pl-smi">bp</span>+i)+j)=( ((i+j)%<span class="pl-c1">2</span>==<span class="pl-c1">0</span>) ? <span class="pl-c1">1</span> : -<span class="pl-c1">1</span> )*<span class="pl-c1">DetValue</span>(<span class="pl-c1">CofactorMatrix</span>(mat, j+<span class="pl-c1">1</span>, i+<span class="pl-c1">1</span>, acm));</td>
-      </tr>
-      <tr>
-        <td id="L274" class="blob-num js-line-number" data-line-number="274"></td>
-        <td id="LC274" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">DestroyMatrix</span>(acm);</td>
-      </tr>
-      <tr>
-        <td id="L275" class="blob-num js-line-number" data-line-number="275"></td>
-        <td id="LC275" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">free</span>(acm);</td>
-      </tr>
-      <tr>
-        <td id="L276" class="blob-num js-line-number" data-line-number="276"></td>
-        <td id="LC276" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> adm;</td>
-      </tr>
-      <tr>
-        <td id="L277" class="blob-num js-line-number" data-line-number="277"></td>
-        <td id="LC277" class="blob-code blob-code-inner js-file-line">}</td>
-      </tr>
-      <tr>
-        <td id="L278" class="blob-num js-line-number" data-line-number="278"></td>
-        <td id="LC278" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L279" class="blob-num js-line-number" data-line-number="279"></td>
-        <td id="LC279" class="blob-code blob-code-inner js-file-line">MATRIX* <span class="pl-en">InverseMatrix</span>(MATRIX* mat)</td>
-      </tr>
-      <tr>
-        <td id="L280" class="blob-num js-line-number" data-line-number="280"></td>
-        <td id="LC280" class="blob-code blob-code-inner js-file-line">{</td>
-      </tr>
-      <tr>
-        <td id="L281" class="blob-num js-line-number" data-line-number="281"></td>
-        <td id="LC281" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> det;</td>
-      </tr>
-      <tr>
-        <td id="L282" class="blob-num js-line-number" data-line-number="282"></td>
-        <td id="LC282" class="blob-code blob-code-inner js-file-line">	MATRIX* m;</td>
-      </tr>
-      <tr>
-        <td id="L283" class="blob-num js-line-number" data-line-number="283"></td>
-        <td id="LC283" class="blob-code blob-code-inner js-file-line">	det=<span class="pl-c1">DetValue</span>(mat);</td>
-      </tr>
-      <tr>
-        <td id="L284" class="blob-num js-line-number" data-line-number="284"></td>
-        <td id="LC284" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(det==<span class="pl-c1">0</span>)</td>
-      </tr>
-      <tr>
-        <td id="L285" class="blob-num js-line-number" data-line-number="285"></td>
-        <td id="LC285" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
-      </tr>
-      <tr>
-        <td id="L286" class="blob-num js-line-number" data-line-number="286"></td>
-        <td id="LC286" class="blob-code blob-code-inner js-file-line">	m=<span class="pl-c1">AdjointMatrix</span>(mat);</td>
-      </tr>
-      <tr>
-        <td id="L287" class="blob-num js-line-number" data-line-number="287"></td>
-        <td id="LC287" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span>(!m)</td>
-      </tr>
-      <tr>
-        <td id="L288" class="blob-num js-line-number" data-line-number="288"></td>
-        <td id="LC288" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> <span class="pl-c1">NULL</span>;</td>
-      </tr>
-      <tr>
-        <td id="L289" class="blob-num js-line-number" data-line-number="289"></td>
-        <td id="LC289" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j;</td>
-      </tr>
-      <tr>
-        <td id="L290" class="blob-num js-line-number" data-line-number="290"></td>
-        <td id="LC290" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;m-&gt;<span class="pl-smi">row</span>;i++)</td>
-      </tr>
-      <tr>
-        <td id="L291" class="blob-num js-line-number" data-line-number="291"></td>
-        <td id="LC291" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;m-&gt;<span class="pl-smi">col</span>;j++)</td>
-      </tr>
-      <tr>
-        <td id="L292" class="blob-num js-line-number" data-line-number="292"></td>
-        <td id="LC292" class="blob-code blob-code-inner js-file-line">			*(*(m-&gt;<span class="pl-smi">bp</span>+i)+j)/=det;</td>
-      </tr>
-      <tr>
-        <td id="L293" class="blob-num js-line-number" data-line-number="293"></td>
-        <td id="LC293" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> m;</td>
-      </tr>
-      <tr>
-        <td id="L294" class="blob-num js-line-number" data-line-number="294"></td>
-        <td id="LC294" class="blob-code blob-code-inner js-file-line">}</td>
-      </tr>
-      <tr>
-        <td id="L295" class="blob-num js-line-number" data-line-number="295"></td>
-        <td id="LC295" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L296" class="blob-num js-line-number" data-line-number="296"></td>
-        <td id="LC296" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">PrintMatrixS</span>(MATRIX* mat)</td>
-      </tr>
-      <tr>
-        <td id="L297" class="blob-num js-line-number" data-line-number="297"></td>
-        <td id="LC297" class="blob-code blob-code-inner js-file-line">{</td>
-      </tr>
-      <tr>
-        <td id="L298" class="blob-num js-line-number" data-line-number="298"></td>
-        <td id="LC298" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">char</span> c;</td>
-      </tr>
-      <tr>
-        <td id="L299" class="blob-num js-line-number" data-line-number="299"></td>
-        <td id="LC299" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">int</span> i, j, row, col;</td>
-      </tr>
-      <tr>
-        <td id="L300" class="blob-num js-line-number" data-line-number="300"></td>
-        <td id="LC300" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">double</span> **bp, *p, d;</td>
-      </tr>
-      <tr>
-        <td id="L301" class="blob-num js-line-number" data-line-number="301"></td>
-        <td id="LC301" class="blob-code blob-code-inner js-file-line">	bp=mat-&gt;<span class="pl-smi">bp</span>;</td>
-      </tr>
-      <tr>
-        <td id="L302" class="blob-num js-line-number" data-line-number="302"></td>
-        <td id="LC302" class="blob-code blob-code-inner js-file-line">	row=mat-&gt;<span class="pl-smi">row</span>;</td>
-      </tr>
-      <tr>
-        <td id="L303" class="blob-num js-line-number" data-line-number="303"></td>
-        <td id="LC303" class="blob-code blob-code-inner js-file-line">	col=mat-&gt;<span class="pl-smi">col</span>;</td>
-      </tr>
-      <tr>
-        <td id="L304" class="blob-num js-line-number" data-line-number="304"></td>
-        <td id="LC304" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;row;i++){</td>
-      </tr>
-      <tr>
-        <td id="L305" class="blob-num js-line-number" data-line-number="305"></td>
-        <td id="LC305" class="blob-code blob-code-inner js-file-line">		p=*(bp+i);</td>
-      </tr>
-      <tr>
-        <td id="L306" class="blob-num js-line-number" data-line-number="306"></td>
-        <td id="LC306" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span>(j=<span class="pl-c1">0</span>;j&lt;col;j++){</td>
-      </tr>
-      <tr>
-        <td id="L307" class="blob-num js-line-number" data-line-number="307"></td>
-        <td id="LC307" class="blob-code blob-code-inner js-file-line">			*(p+j)&lt;<span class="pl-c1">0</span> ? (c=<span class="pl-s"><span class="pl-pds">&#39;</span>-<span class="pl-pds">&#39;</span></span>, d=-*(p+j)) : (c=<span class="pl-s"><span class="pl-pds">&#39;</span> <span class="pl-pds">&#39;</span></span>, d=*(p+j)) ;</td>
-      </tr>
-      <tr>
-        <td id="L308" class="blob-num js-line-number" data-line-number="308"></td>
-        <td id="LC308" class="blob-code blob-code-inner js-file-line">			<span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-c1">%c%-6.6G</span> <span class="pl-pds">&quot;</span></span>, c, d);</td>
-      </tr>
-      <tr>
-        <td id="L309" class="blob-num js-line-number" data-line-number="309"></td>
-        <td id="LC309" class="blob-code blob-code-inner js-file-line">		}</td>
-      </tr>
-      <tr>
-        <td id="L310" class="blob-num js-line-number" data-line-number="310"></td>
-        <td id="LC310" class="blob-code blob-code-inner js-file-line">		<span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L311" class="blob-num js-line-number" data-line-number="311"></td>
-        <td id="LC311" class="blob-code blob-code-inner js-file-line">	}</td>
-      </tr>
-      <tr>
-        <td id="L312" class="blob-num js-line-number" data-line-number="312"></td>
-        <td id="LC312" class="blob-code blob-code-inner js-file-line">}</td>
-      </tr>
-      <tr>
-        <td id="L313" class="blob-num js-line-number" data-line-number="313"></td>
-        <td id="LC313" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L314" class="blob-num js-line-number" data-line-number="314"></td>
-        <td id="LC314" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L315" class="blob-num js-line-number" data-line-number="315"></td>
-        <td id="LC315" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L316" class="blob-num js-line-number" data-line-number="316"></td>
-        <td id="LC316" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L317" class="blob-num js-line-number" data-line-number="317"></td>
-        <td id="LC317" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L318" class="blob-num js-line-number" data-line-number="318"></td>
-        <td id="LC318" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L319" class="blob-num js-line-number" data-line-number="319"></td>
-        <td id="LC319" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L320" class="blob-num js-line-number" data-line-number="320"></td>
-        <td id="LC320" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L321" class="blob-num js-line-number" data-line-number="321"></td>
-        <td id="LC321" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L322" class="blob-num js-line-number" data-line-number="322"></td>
-        <td id="LC322" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L323" class="blob-num js-line-number" data-line-number="323"></td>
-        <td id="LC323" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L324" class="blob-num js-line-number" data-line-number="324"></td>
-        <td id="LC324" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L325" class="blob-num js-line-number" data-line-number="325"></td>
-        <td id="LC325" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L326" class="blob-num js-line-number" data-line-number="326"></td>
-        <td id="LC326" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">endif</span></td>
+        <td id="LC270" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">endif</span></td>
       </tr>
 </table>
 </div>
